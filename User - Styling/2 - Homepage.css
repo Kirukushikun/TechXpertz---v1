@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --highlight: #9147F2;
+    --primary-color: #7B5CAD;
+    --dark-grey: #666666;
+    --light-grey: #f0f0f0;
+    --white: #FFFFFF;
+    --text-color: #383838;
+}
+
+body{
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15%;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.logo span {
+    color: var(--highlight);
+}
+
+.search-bar {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+}
+.search-bar button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+.icons i {
+    font-size: 20px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.account-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.account-button i{
+    margin-right: 20px;
+}
+
+.categories {
+    display: flex;
+    justify-content: start;
+    gap: 40px;
+    padding: 10px 15%;
+    background-color: #fff;
+}
+
+.categories a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.container-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 15%;
+    height: 700px;
+
+    background-color: var(--light-grey);
+    position: relative;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+
+    color: var(--text-color);
+    text-align: center;
+
+    max-width: 40%;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+.text-content h1 {
+    font-size: 47px;
+    font-weight: 600;
+}
+.text-content p {
+    margin-top: -10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.learn-more-btn {
+    background-color: #fff;
+    color: #333;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.slider-indicators {
+    position: absolute;
+    bottom: 60px;
+
+    display: flex;
+    gap: 10px;
+}
+.slider-indicators span {
+    width: 30px;
+    height: 6px;
+    background-color: #cccccc;
+}
+.slider-indicators .active {
+    background-color: var(--primary-color);
+    width: 60px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.container-2 {
+    margin: 45px 15%;
+}
+
+.text-content-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.view-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 5px;
+
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.categories-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(20% - 25px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary-color);
+    background-color: var(--white);
+    border-radius: 8px;
+    margin-right: 15px;
+
+    height: 50px;
+    width: 50px;
+}
+
+.text h3 {
+    margin: 0;
+    font-size: 19px;
+    color: #333;
+}
+
+.text p {
+    margin:0;
+    font-size: 15px;
+    color: #666;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
