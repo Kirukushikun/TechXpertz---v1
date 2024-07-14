@@ -157,12 +157,13 @@
     display: flex;
     align-items: center;
     gap: 15px;
-}.header-actions button{
-    border-radius: 5px;
-
-    border: solid var(--dark-grey) 2px;
-}.header-actions i{
-    padding: 10px 10px;
+}.header-actions a{
+    cursor: pointer;
+}
+.header-actions i{
+    padding: 10px;
+    font-size: 20px;
+    color: var(--text-color);
 }
 
 .shops {
