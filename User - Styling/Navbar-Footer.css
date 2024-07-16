@@ -6,6 +6,7 @@
     align-items: center;
     padding: 15px 15%;
     gap: 30px;
+    
 }
 
 .logo {
@@ -74,6 +75,8 @@
     gap: 40px;
     padding: 10px 15%;
     background-color: #fff;
+
+    
 }
 
 .categories a {

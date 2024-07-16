@@ -84,24 +84,24 @@
                 <div class="form-section excluded">
                     <h2>Device Issue</h2>
                     <div class="form-group-excluded">
-                        <label for="issue-description">Describe the Issue</label>
-                        <textarea id="issue-description" name="issue-description"></textarea>
+                        <label for="issue-description">Description of Issue</label>
+                        <textarea id="issue-description" name="issue-description" placeholder="Please provide a detailed description of the issue you are experiencing with your device."></textarea>
                     </div>
                     <div class="form-group-excluded">
-                        <label for="error-message">Error Message (if applicable)</label>
-                        <textarea id="error-message" name="error-message"></textarea>
+                        <label for="error-message">Error Messages <span>(if applicable)</span></label>
+                        <textarea id="error-message" name="error-message" placeholder="If your device is displaying any error messages or codes, please provide them here."></textarea>
                     </div>
                     <div class="form-group-excluded">
-                        <label for="previous-steps">Previous Repair Attempts (if applicable)</label>
-                        <textarea id="previous-steps" name="previous-steps"></textarea>
+                        <label for="previous-steps">Previous Repair Attempts <span>(if applicable)</span></label>
+                        <textarea id="previous-steps" name="previous-steps" placeholder="Have you attempted any repairs or troubleshooting on the device before? If yes, please describe here"></textarea>
                     </div>
                     <div class="form-group-excluded">
-                        <label for="issue-duration">Issue Duration</label>
-                        <textarea id="issue-duration" name="issue-duration"></textarea>
+                        <label for="issue-duration">Recent Changes or Events <span>(if applicable)</span></label>
+                        <textarea id="issue-duration" name="issue-duration" placeholder="Have there been any recent changes or events that may have contributed to the issue? Ex. Drops, spills and etc. "></textarea>
                     </div>
                     <div class="form-group-excluded">
-                        <label for="additional-info">Additional Information</label>
-                        <textarea id="additional-info" name="additional-info"></textarea>
+                        <label for="additional-info">Parts Prepared for Repair <span>(if applicable)</span></label>
+                        <textarea id="additional-info" name="additional-info" placeholder="Are there any specific parts or components that you have already prepared for the repair?"></textarea>
                     </div>
                 </div>
     
@@ -198,23 +198,26 @@
                     </div>
     
                     <h2>Preferred Contact Method</h2>
-                    <div class="summary contact-prefference">
+                    <div class="summary contact-preference">
                         <div class="form-group">
-                            <input type="radio" id="contact-email" name="contact-method" value="email">
+                            <input type="checkbox" id="contact-email" name="contact-method" value="email">
                             <label for="contact-email">Email</label>
                         </div>
                         <div class="form-group">
-                            <input type="radio" id="contact-phone" name="contact-method" value="phone">
+                            <input type="checkbox" id="contact-phone" name="contact-method" value="phone">
                             <label for="contact-phone">Phone Call</label>
                         </div>
                         <div class="form-group">
-                            <input type="radio" id="contact-sms" name="contact-method" value="sms">
+                            <input type="checkbox" id="contact-sms" name="contact-method" value="sms">
                             <label for="contact-sms">SMS</label>
                         </div>                    
                     </div>
-    
-    
-                    <button type="submit" class="submit-button">Request Appointment</button>
+                    
+                    <div class="action">
+                        <button type="submit" class="submit-button">REQUEST APPOINTMENT</button>
+                        <p><b>Reminder :</b> Please review your information before submitting. Changes cannot be made after submission.</p>
+                    </div>
+
                 </div>            
             </div>
         </form>
