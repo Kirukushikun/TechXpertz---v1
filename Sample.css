@@ -1,123 +1,36 @@
-:root {
-    --primary-color: #7B5CAD;
-    --secondary-color: #f0f0f0;
-    --text-color: #333333;
-    --link-color: #7B5CAD;
-    --border-color: #dddddd;
-    --button-hover-color: #6a4d9e;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    color: var(--text-color);
-    background-color: var(--secondary-color);
-    margin: 0;
-    padding: 0;
-}
-
-.container-description {
+.appointment-form{
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
     padding: 40px 15%;
 }
 
-.review-summary {
+.left{
+    width: 75%;
+}
+.right{
+    width: 25%;
+    background-color: antiquewhite;
+}
+
+form .form-section{
     display: flex;
-    gap: 20px;
-    background-color: #e0d4f2;
-    border-radius: 10px;
-    padding: 20px;
-    color: var(--primary-color);
+    flex-wrap: wrap;
+}
+form .form-section h2{
+    background-color: antiquewhite;
+    width: 100%;
+}
+form .left .form-section .form-group{
+    display: flex;
+    flex-direction: column;
+    width:calc(50% - 40px);
+    margin-right: 40px;
 }
 
-.review-summary .rating {
-    text-align: center;
-    flex: 1;
-}
-
-.review-summary .rating-score {
-    font-size: 48px;
-    font-weight: bold;
-}
-
-.review-summary .rating-stars {
-    color: #FFD700;
-    font-size: 24px;
-}
-
-.review-summary .rating-reviews {
-    font-size: 18px;
-    color: var(--text-color);
-}
-
-.review-summary .rating-breakdown {
-    flex: 2;
-    padding: 20px;
-}
-
-.rating-bar {
+.detail-group{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-}
-
-.rating-bar .bar {
-    flex: 1;
-    height: 10px;
-    background-color: var(--border-color);
-    border-radius: 5px;
-    margin: 0 10px;
-    position: relative;
-}
-
-.rating-bar .bar .filled {
-    background-color: var(--primary-color);
-    height: 100%;
-    border-radius: 5px;
-}
-
-.rating-bar .rating-stars {
-    color: #FFD700;
-    font-size: 16px;
-}
-
-.rating-bar .rating-count {
-    font-size: 16px;
-}
-
-.tabs {
-    display: flex;
-    gap: 10px;
-    margin: 20px 0;
-    font-size: 18px;
-}
-
-.tabs .tab {
-    padding: 10px 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.tabs .tab.active {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.content h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.content p {
-    margin-bottom: 20px;
-}
-
-.content img {
-    width: 100%;
-    border-radius: 10px;
+    justify-content: space-between;
+    margin-bottom: -20px;
 }

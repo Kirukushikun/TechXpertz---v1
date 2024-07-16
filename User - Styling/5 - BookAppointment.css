@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --highlight: #9147F2;
+    --primary-color: #7B5CAD;
+    --secondary-color: #EEE3FF;
+    --dark-grey: #666666;
+    --light-grey: #f0f0f0;
+    --white: #FFFFFF;
+
+    --text-color: #383838;
+    --lighted-text-color: #999999;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+.appointment-form{
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 40px 15%;
+    color: var(--text-color);
+}
+
+.left{
+    width: 75%;
+}
+.right{
+    width: 25%;
+    background-color: antiquewhite;
+}
+
+form .form-section{
+    display: flex;
+    flex-wrap: wrap;
+}form .form-section.excluded{
+    display: block;
+}
+
+form .form-section h2{
+    background-color: antiquewhite;
+    width: 100%;
+}
+form .left .form-section .form-group{
+    display: flex;
+    flex-direction: column;
+    width:calc(50% - 40px);
+    margin-right: 40px;
+}
+form .left .form-section .form-group-excluded{
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+.form-group-excluded textarea{
+    resize: vertical;
+
+    min-height: 50px;
+    max-height: 200px;
+}
+
+.detail-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
