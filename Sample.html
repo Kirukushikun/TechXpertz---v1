@@ -3,116 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Sample.css">
+    <title>Multi-step Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Track Your Repair Status</title>
+    <link rel="stylesheet" href="Sample.css">
 </head>
 <body>
-    <div class="container">
 
-        <div class="upper">
-            <div class="header">
-                <h1>Track Your Repair Status</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    <div class="Registration-Form">
+        <div class="header">
+            <div class="left">
+                <h3>Tech<span>X</span>pertz</h3>
+                <p>Technician</p>
             </div>
-            <div class="search-box">
-                <input type="text" placeholder="Please enter your repair ID here">
-                <button>Track Repair Status</button>
+            <div class="right">
+                <p>Need Help</p>
+                <i class="fa-solid fa-question"></i>
+            </div>
+        </div>    
+        
+        <div class="body">
+            <div class="form-container">
+
+                <div class="form-navigation">
+                    <h2>Registration Form</h2>
+                    <ul>
+                        <li class="nav-item active" data-step="1">Personal Information</li>
+                        <li class="nav-item" data-step="2">Repair Shop Information</li>
+                        <li class="nav-item" data-step="3">Legal Documentation</li>
+                        <li class="nav-item" data-step="4">Proof of Ownership</li>
+                        <li class="nav-item" data-step="5">Terms and Conditions</li>
+                        <li class="nav-item" data-step="6">Privacy Policy</li>
+                        <li class="nav-item" data-step="7">Security</li>
+                    </ul>
+                </div>
+
+                <form id="registrationForm">
+                    <div class="form-step active" data-step="1">
+                        <h2>Personal Information</h2>
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Middle Name">
+                        <input type="text" placeholder="Last Name">
+                        <input type="email" placeholder="Email Address">
+                        <input type="tel" placeholder="Contact No.">
+                        <input type="text" placeholder="Educational Background">
+                        <input type="text" placeholder="Province">
+                        <input type="text" placeholder="City">
+                        <input type="text" placeholder="Barangay">
+                        <input type="text" placeholder="ZIP Code">
+                        <input type="date" placeholder="Date of Birth">
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="2">
+                        <h2>Repair Shop Information</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="3">
+                        <h2>Legal Documentation</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="4">
+                        <h2>Proof of Ownership</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="5">
+                        <h2>Terms and Conditions</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="6">
+                        <h2>Privacy Policy</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="7">
+                        <h2>Security</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-
-
-        <div class="lower">
-            <div class="repair-info">
-                <p><strong>Repair ID:</strong> #4241415145425325323</p>
-                <ul>
-                    <li>1x Original LED Replacement</li>
-                    <li>1x Original Battery Replacement</li>
-                </ul>
-            </div>
-
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <i class="fa-solid fa-circle" style="color: blueviolet;"></i>
-                    <div class="timeline-status">
-                        <h3>Device Collected</h3>
-                        <p>Sat, 23 Jul 2024, 02:49 PM</p>
-                    </div>
-                    <div class="timeline-description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                    </div>
-                </div>
-
-                <!-- <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Ready for Pickup</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <span>Sat, 23 Jul 2024, 01:00 PM</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Repair Completed</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <span>Sat, 23 Jul 2024, 12:00 NN</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Waiting for Parts</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <span>Sat, 23 Jul 2024, 10:00 AM</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Repair in Progress</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <span>Fri, 22 Jul 2024, 03:49 PM</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Diagnosis in Progress</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <span>Fri, 22 Jul 2024, 01:49 PM</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Device Dropped Off</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <span>Fri, 22 Jul 2024, 11:49 AM</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Appointment Confirmed</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <span>Thu, 21 Jul 2024, 12:49 PM</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Appointment Requested</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        <span>Thu, 21 Jul 2024, 11:49 AM</span>
-                    </div>
-                </div> -->
-            </div>            
-        </div>
-
     </div>
 
+    
+    <script src="Sample.js"></script>
 </body>
 </html>
