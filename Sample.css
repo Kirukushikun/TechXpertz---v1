@@ -1,36 +1,102 @@
-.appointment-form{
-    display: flex;
-    align-items: flex-start;
-    gap: 60px;
+/* CSS Variables */
+:root {
+    --primary-color: #6A5ACD;
+    --secondary-color: #333;
+    --background-color: #f5f5f5;
+    --text-color: #666;
+    --border-color: #ddd;
+    --marker-color: #6A5ACD;
+    --button-color: #6A5ACD;
+    --button-hover-color: #5b4acb;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
     padding: 40px 15%;
 }
 
-.left{
-    width: 75%;
-}
-.right{
-    width: 25%;
-    background-color: antiquewhite;
+.upper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 0 50px;
+
+    background-color: #c2c2c2;
+
 }
 
-form .form-section{
-    display: flex;
-    flex-wrap: wrap;
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
 }
-form .form-section h2{
-    background-color: antiquewhite;
+
+.header h1 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: var(--text-color);
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #333;
+    padding: 20px;
+    width: 60%;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lower{
+    display: flex;
+    justify-content: flex-start;
+    margin: 70px 50px 50px;
+}
+.timeline{
     width: 100%;
 }
-form .left .form-section .form-group{
-    display: flex;
-    flex-direction: column;
-    width:calc(50% - 40px);
-    margin-right: 40px;
+.timeline-item{
+    position: relative;
+    background-color: #dadada;
+    padding: 20px;
+    padding-top: 0;
+
+    border-left: solid blueviolet;
+}
+.timeline-item i{
+    position: absolute;
+    top: 0;
+    left: -10px;
 }
 
-.detail-group{
+.timeline-item .timeline-status{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: -20px;
 }
+/* Timeline */
+

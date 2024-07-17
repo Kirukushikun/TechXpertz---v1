@@ -1,198 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appointment Form</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Sample.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Track Your Repair Status</title>
 </head>
 <body>
+    <div class="container">
 
-    <form class="appointment-form">
-        <div class="left">
-            <div class="form-section">
-                <h2>Customer Details</h2>
-                <div class="form-group">
-                    <label for="first-name">First Name</label>
-                    <input type="text" id="first-name" name="first-name">
-                </div>
-                <div class="form-group">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" name="last-name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Mobile Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
+        <div class="upper">
+            <div class="header">
+                <h1>Track Your Repair Status</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Please enter your repair ID here">
+                <button>Track Repair Status</button>
+            </div>
+        </div>
+
+
+        <div class="lower">
+            <div class="repair-info">
+                <p><strong>Repair ID:</strong> #4241415145425325323</p>
+                <ul>
+                    <li>1x Original LED Replacement</li>
+                    <li>1x Original Battery Replacement</li>
+                </ul>
             </div>
 
-            <div class="form-section">
-                <h2>Device Information</h2>
-                <div class="form-group">
-                    <label for="device-type">Device Type</label>
-                    <select id="device-type" name="device-type">
-                        <option value="laptop">Laptop</option>
-                        <option value="desktop">Desktop</option>
-                        <option value="tablet">Tablet</option>
-                        <option value="phone">Phone</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="brand">Brand</label>
-                    <input type="text" id="brand" name="brand">
-                </div>
-                <div class="form-group">
-                    <label for="device-model">Device Model</label>
-                    <input type="text" id="device-model" name="device-model">
-                </div>
-                <div class="form-group">
-                    <label for="serial-number">Serial Number (if applicable)</label>
-                    <input type="text" id="serial-number" name="serial-number">
-                </div>
-            </div>
 
-            <div class="form-section">
-                <h2>Device Issue</h2>
-                <div class="form-group">
-                    <label for="issue-description">Describe the Issue</label>
-                    <textarea id="issue-description" name="issue-description"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="error-message">Error Message (if applicable)</label>
-                    <input type="text" id="error-message" name="error-message">
-                </div>
-                <div class="form-group">
-                    <label for="previous-steps">Previous Repair Attempts (if applicable)</label>
-                    <textarea id="previous-steps" name="previous-steps"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="issue-duration">Issue Duration</label>
-                    <input type="text" id="issue-duration" name="issue-duration">
-                </div>
-                <div class="form-group">
-                    <label for="additional-info">Additional Information</label>
-                    <textarea id="additional-info" name="additional-info"></textarea>
-                </div>
-            </div>
+            <div class="timeline">
 
-            <div class="form-section">
-                <h2>Appointment Schedule</h2>
-                <div class="form-group">
-                    <label for="appointment-date">Select Date</label>
-                    <input type="date" id="appointment-date" name="appointment-date">
+                <div class="timeline-item">
+                    <i class="fa-solid fa-circle" style="color: blueviolet;"></i>
+                    <div class="timeline-status">
+                        <h3>Device Collected</h3>
+                        <p>Sat, 23 Jul 2024, 02:49 PM</p>
+                    </div>
+                    <div class="timeline-description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="appointment-time">Select Time</label>
-                    <input type="time" id="appointment-time" name="appointment-time">
+
+                <!-- <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Ready for Pickup</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <span>Sat, 23 Jul 2024, 01:00 PM</span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="urgency-level">Urgency Level</label>
-                    <select id="urgency-level" name="urgency-level">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Repair Completed</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <span>Sat, 23 Jul 2024, 12:00 NN</span>
+                    </div>
                 </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Waiting for Parts</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <span>Sat, 23 Jul 2024, 10:00 AM</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Repair in Progress</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <span>Fri, 22 Jul 2024, 03:49 PM</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Diagnosis in Progress</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <span>Fri, 22 Jul 2024, 01:49 PM</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Device Dropped Off</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <span>Fri, 22 Jul 2024, 11:49 AM</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Appointment Confirmed</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <span>Thu, 21 Jul 2024, 12:49 PM</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Appointment Requested</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <span>Thu, 21 Jul 2024, 11:49 AM</span>
+                    </div>
+                </div> -->
             </div>            
         </div>
 
-        <div class="right">
-            <div class="form-summary">
-                <h2>Summary</h2>
-                <div class="summary contact-summary">
-                    <div class="detail-group">
-                        <p>Full Name</p>
-                        <h4>Iverson Guno</h4>
-                    </div>
-                    <div class="detail-group">
-                        <p>Contact</p>
-                        <h4>+63 0123456789</h4>
-                    </div>
-                    <div class="detail-group">
-                        <p>Email</p>
-                        <h4>Iversoncraigg@gmail.com</h4>
-                    </div>
-                </div>
-
-                <div class="summary device-summary">
-                    <div class="detail-group">
-                        <p>Device Type</p>
-                        <h4>Laptop</h4>
-                    </div>
-                    <div class="detail-group">
-                        <p>Brand</p>
-                        <h4>Asus</h4>
-                    </div>
-                    <div class="detail-group">
-                        <p>Model</p>
-                        <h4>Asus TUF Gaming F15</h4>
-                    </div>
-                    <div class="detail-group">
-                        <p>Serial Number</p>
-                        <h4>ASD01234567890</h4>
-                    </div>
-                </div>
-
-                <div class="summary issue-summary">
-                    <div class="detail-group">
-                        <h4>Error Messages</h4>
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                    <div class="detail-group">
-                        <h4>Previous Repair Attempts</h4>
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                    <div class="detail-group">
-                        <h4>Recent Changes or Events</h4>
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                    <div class="detail-group">
-                        <h4>Parts Prepared for Repair</h4>
-                        <i class="fa-solid fa-check"></i>
-                    </div>                    
-                </div>
-
-                <div class="summary schedule-summary">
-                    <div class="detail-group">
-                        <p>Request Date</p>
-                        <h4>Thu, July 20, 2024</h4>
-                    </div>
-                    <div class="detail-group">
-                        <p>Request Time</p>
-                        <h4>10:00 AM - 11:00 AM</h4>
-                    </div>
-                    <div class="detail-group">
-                        <p>Urgency Level</p>
-                        <h4>Medium</h4>
-                    </div>
-                </div>
-
-                <h2>Preferred Contact Method</h2>
-                <div class="summary contact-prefference">
-                    <div class="form-group">
-                        <input type="radio" id="contact-email" name="contact-method" value="email">
-                        <label for="contact-email">Email</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="radio" id="contact-phone" name="contact-method" value="phone">
-                        <label for="contact-phone">Phone Call</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="radio" id="contact-sms" name="contact-method" value="sms">
-                        <label for="contact-sms">SMS</label>
-                    </div>                    
-                </div>
-
-
-                <button type="submit" class="submit-button">Request Appointment</button>
-            </div>            
-        </div>
-    </form>
+    </div>
 
 </body>
 </html>
