@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-step Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Technician - Styling/1 - Registration.css">
+</head>
+<body>
+
+    <div class="Registration-Form">
+        <div class="header">
+            <div class="left">
+                <h3>Tech<span>X</span>pertz</h3>
+                <p>Technician</p>
+            </div>
+            <div class="right">
+                <p>Need Help</p>
+                <i class="fa-solid fa-question"></i>
+            </div>
+        </div>    
+        
+        <div class="body">
+            <div class="form-container">
+                <div class="form-navigation">
+                    <h2>Registration Form</h2>
+                    <ul>
+                        <li class="nav-item active" data-step="1">Personal Information</li>
+                        <li class="nav-item" data-step="2">Repair Shop Information</li>
+                        <li class="nav-item" data-step="3">Legal Documentation</li>
+                        <li class="nav-item" data-step="4">Proof of Ownership</li>
+                        <li class="nav-item" data-step="5">Terms and Conditions</li>
+                        <li class="nav-item" data-step="6">Privacy Policy</li>
+                        <li class="nav-item" data-step="7">Security</li>
+                    </ul>
+                </div>
+
+                <form id="registrationForm">
+                    <div class="form-step" data-step="1">
+                        <div class="form-inputs">
+                            <h2>Personal Information</h2>
+                            <div class="input-container">
+                                <div class="input-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="first-name">
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="middle-name">Middle Name</label>
+                                    <input type="text" id="middle-name" name="middle-name">
+                                </div>
+                                <div class="input-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" name="last-name">
+                                </div>
+                                <div class="input-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+                                <div class="input-group">
+                                    <label for="contact">Contact No.</label>
+                                    <input type="tel" id="contact" name="contact">
+                                </div>
+                                <div class="input-group">
+                                    <label for="education">Educational Background</label>
+                                    <input type="text" id="education" name="education">
+                                </div>
+                                <div class="input-group">
+                                    <label for="province">Province</label>
+                                    <input type="text" id="province" name="province">
+                                </div>
+                                <div class="input-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" name="city">
+                                </div>
+                                <div class="input-group">
+                                    <label for="barangay">Barangay</label>
+                                    <input type="text" id="barangay" name="barangay">
+                                </div>
+                                <div class="input-group">
+                                    <label for="zip">ZIP Code</label>
+                                    <input type="text" id="zip" name="zip">
+                                </div>
+                                <div class="input-group">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" id="dob" name="dob">
+                                </div>                       
+                            </div>                            
+                        </div>
+                        <div class="form-navigation-buttons">
+                            <span></span>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step" data-step="2">
+                        <div class="form-inputs">
+                            <h2>Repair Shop Information</h2>
+                            <div class="input-container">
+                                <div class="input-group">
+                                    <label for="shop-name">Shop Name</label>
+                                    <input type="text" id="shop-name" name="shop-name">
+                                </div>
+                                <div class="input-group">
+                                    <label for="shop-email">Shop Email Address</label>
+                                    <input type="email" id="shop-email" name="shop-email">
+                                </div>
+                                <div class="input-group">
+                                    <label for="business-contact">Business Contact No.</label>
+                                    <input type="tel" id="business-contact" name="business-contact">
+                                </div>
+                                <div class="input-group">
+                                    <label for="province">Province</label>
+                                    <input type="text" id="province" name="province">
+                                </div>
+                                <div class="input-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" name="city">
+                                </div>
+                                <div class="input-group">
+                                    <label for="barangay">Barangay</label>
+                                    <input type="text" id="barangay" name="barangay">
+                                </div>
+                                <div class="input-group">
+                                    <label for="zip">ZIP Code</label>
+                                    <input type="text" id="zip" name="zip">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step active" data-step="3">
+                        <h2>Legal Documentation</h2>
+
+                        
+                        <p class="info"><i class="fa-solid fa-exclamation"></i> Here are the recommended legal documents that you can submit to immediately get verified:</p>
+                        <ul class="document-list">
+                            <li>Business Permit</li>
+                            <li>Tax Identification Number (TIN)</li>
+                            <li>Lease Agreement</li>
+                            <li>Business License</li>
+                            <li>Barangay Clearance</li>
+                        </ul>
+
+                        <p class="info"><i class="fa-solid fa-exclamation"></i> Please ensure that you provide two or more of the following legal documents for verification purposes:</p>
+                        <div class="form-group">
+                            <select name="document-type" id="document-type">
+                                <option value="business-permit">Business Permit</option>
+                                <option value="tax-id">Tax Identification Number (TIN)</option>
+                                <option value="lease-agreement">Lease Agreement</option>
+                                <option value="business-license">Business License</option>
+                                <option value="barangay-clearance">Barangay Clearance</option>
+                            </select>
+                            <input type="file" name="document-file" id="document-file">
+                            <button type="button" onclick="uploadFile()">Upload File</button>
+                        </div>
+                        <div id="additional-documents"></div>
+                        
+                        <a href="#" class="add-document" onclick="addDocumentField()">+ Add another document</a>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="4">
+                        <h2>Proof of Ownership</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="5">
+                        <h2>Terms and Conditions</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="6">
+                        <h2>Privacy Policy</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="button" class="next-btn">Next</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="7">
+                        <h2>Security</h2>
+                        
+                        <div class="form-navigation-buttons">
+                            <button type="button" class="prev-btn">Previous</button>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="/Technician - Javascript/1 - Registration.js"></script>
+</body>
+</html>
