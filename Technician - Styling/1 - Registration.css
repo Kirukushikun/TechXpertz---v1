@@ -64,6 +64,7 @@ body{
     border-radius: 50%;
 }
 
+
 .body {
     margin: 40px 15%;
     background-color: #F8F8F8;
@@ -126,23 +127,85 @@ body{
 
     border-bottom: solid #d9d9d9 2px;
     margin-bottom: 25px;
-}
+}.form-step .form-inputs p{
+    color: var(--lighted-text-color);
+}.form-step .form-inputs i{
+    color: var(--lighted-text-color);
+    margin-right: 5px;
+}.form-step .form-inputs ul{
+    /* background-color: #999999; */
+    list-style-type: none;
+    width: 80%;
+    padding-left: 22px;
+    margin: 10px 0 15px;
 
-.form-step .input-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}.form-step .form-inputs ul li{
+    color: var(--text-color);
+    font-weight: 500;
+}.form-step .form-inputs ul li i{
+    color: var(--primary-color);
+}.form-step .form-inputs a{
+    padding-left: 22px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+}.form-step .form-inputs a i{
+    color: var(--primary-color);
+}
+.form-inputs .input-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+
+}
+.form-inputs .form-group{
+    padding-left: 22px;
+    margin: 10px 0 15px;
+    display: flex;
+    gap: 15px;
+}.form-inputs .form-group select{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 7px;
+    border: solid var(--primary-color) 2px;
+}
+
+.file-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.file-input {
+    display: none;
+}
+
+.custom-file-label {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-weight: 500;
+}
+
+
+.file-name {
+    margin-left: 10px;
+    font-size: 15px;
+    color: var(--text-color);
 }
 
 .input-container{
     width: 100%;
-}
-
-.input-group{
+}.input-container .input-group{
     margin-top: -10px;
-}.input-group label{
+}.input-container .input-group label{
     color: var(--lighted-text-color);
-}.input-group input{
+}.input-container .input-group input{
     margin-top: 5px;
     padding: 10px;
     font-size: 15px;
@@ -151,11 +214,11 @@ body{
     width: 100%;
 }
 
-.form-navigation-buttons{
+.form-step .form-navigation-buttons{
     display: flex;
     align-items: center;
     justify-content: space-between;
-}.form-navigation-buttons button{
+}.form-step .form-navigation-buttons button{
     padding: 7px 25px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -165,7 +228,7 @@ body{
     border: solid var(--primary-color) 2px;
     background-color: var(--primary-color);
     color: var(--white);
-}.form-navigation-buttons .prev-btn{
+}.form-step .form-navigation-buttons .prev-btn{
     border-radius: 7px;
     border: solid #D9D9D9 2px;
     background-color: var(--white);

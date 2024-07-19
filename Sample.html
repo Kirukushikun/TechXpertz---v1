@@ -3,42 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legal Documentation</title>
-    <link rel="stylesheet" href="Sample.css">
+    <title>Document Upload</title>
+    <link rel="stylesheet" href="/Technician - Styling/1 - Registration.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
 </head>
 <body>
-    <div class="container">
+    <div class="form-inputs">
         <h2>Legal Documentation</h2>
-        <p class="info">⚠️ Here are the recommended legal documents that you can submit to immediately get verified:</p>
+        <p class="info"><i class="fa-solid fa-circle-info"></i> Here are the recommended legal documents that you can submit to immediately get verified:</p>
         <ul class="document-list">
-            <li>Business Permit</li>
-            <li>Tax Identification Number (TIN)</li>
-            <li>Lease Agreement</li>
-            <li>Business License</li>
-            <li>Barangay Clearance</li>
+            <li><i class="fa-sharp fa-solid fa-circle"></i>Business Permit</li>
+            <li><i class="fa-sharp fa-solid fa-circle"></i>Tax Identification Number (TIN)</li>
+            <li><i class="fa-sharp fa-solid fa-circle"></i>Lease Agreement</li>
+            <li><i class="fa-sharp fa-solid fa-circle"></i>Business License</li>
+            <li><i class="fa-sharp fa-solid fa-circle"></i>Barangay Clearance</li>
         </ul>
-        <p class="info">⚠️ Please ensure that you provide two or more of the following legal documents for verification purposes:</p>
-        <form id="document-form">
+
+        <p class="info"><i class="fa-solid fa-circle-info"></i> Please ensure that you provide two or more of the following legal documents for verification purposes:</p>
+        <div id="document-fields">
             <div class="form-group">
-                <select name="document-type" id="document-type">
+                <select name="document-type-1" id="document-type-1">
                     <option value="business-permit">Business Permit</option>
                     <option value="tax-id">Tax Identification Number (TIN)</option>
                     <option value="lease-agreement">Lease Agreement</option>
                     <option value="business-license">Business License</option>
                     <option value="barangay-clearance">Barangay Clearance</option>
                 </select>
-                <input type="file" name="document-file" id="document-file">
-                <button type="button" onclick="uploadFile()">Upload File</button>
+                <div class="file-input-container">
+                    <input type="file" name="document-file-1" id="document-file-1" class="file-input">
+                    <label for="document-file-1" class="custom-file-label">Upload File</label>
+                    <span class="file-name" id="fileName-1"></span>
+                </div>
             </div>
-            <div id="additional-documents"></div>
-            <a href="#" class="add-document" onclick="addDocumentField()">+ Add another document</a>
-            <div class="form-actions">
-                <button type="button" onclick="previousStep()">Back</button>
-                <button type="submit">Next</button>
-            </div>
-        </form>
+        </div>
+        <a href="#" class="add-document" onclick="addDocumentField()"><i class="fa-solid fa-plus"></i> Add another document</a>
     </div>
 
-    <script src="Sample.js"></script>
+
+    <div class="form-container">
+        <div class="form-step active" data-step="3">
+            <div class="form-inputs">
+                <h2>Legal Documents</h2>                
+            </div>
+
+            <div class="form-navigation-buttons">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+        </div>
+
+        <div class="form-step active" data-step="4">
+            <div class="form-inputs">
+                <h2>Proof of Ownership</h2>                
+            </div>
+            <div class="form-navigation-buttons">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let documentCount = 1; // Start with the first document slot
+
+        function addDocumentField() {
+            documentCount++;
+            const additionalDocuments = document.getElementById("document-fields");
+            const newFormGroup = document.createElement("div");
+            newFormGroup.className = "form-group";
+            const uniqueId = documentCount; // Ensure uniqueness with documentCount
+            newFormGroup.innerHTML = `
+                <select name="document-type-${uniqueId}" id="document-type-${uniqueId}">
+                    <option value="business-permit">Business Permit</option>
+                    <option value="tax-id">Tax Identification Number (TIN)</option>
+                    <option value="lease-agreement">Lease Agreement</option>
+                    <option value="business-license">Business License</option>
+                    <option value="barangay-clearance">Barangay Clearance</option>
+                </select>
+                <div class="file-input-container">
+                    <input type="file" name="document-file-${uniqueId}" id="document-file-${uniqueId}" class="file-input">
+                    <label for="document-file-${uniqueId}" class="custom-file-label">Choose File</label>
+                    <span class="file-name" id="fileName-${uniqueId}"></span>
+                </div>
+            `;
+            additionalDocuments.appendChild(newFormGroup);
+
+            // Add event listener to the new file input
+            document.getElementById(`document-file-${uniqueId}`).addEventListener('change', function() {
+                const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+                document.getElementById(`fileName-${uniqueId}`).textContent = fileName;
+            });
+        }
+
+        // Initial event listener for the first file input
+        document.getElementById('document-file-1').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+            document.getElementById('fileName-1').textContent = fileName;
+        });
+    </script>
 </body>
 </html>

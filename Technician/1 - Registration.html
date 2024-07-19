@@ -10,6 +10,7 @@
 <body>
 
     <div class="Registration-Form">
+        
         <div class="header">
             <div class="left">
                 <h3>Tech<span>X</span>pertz</h3>
@@ -36,7 +37,7 @@
                     </ul>
                 </div>
 
-                <form id="registrationForm">
+                <form id="registrationForm"> 
                     <div class="form-step" data-step="1">
                         <div class="form-inputs">
                             <h2>Personal Information</h2>
@@ -134,48 +135,81 @@
                         </div>
                     </div>
 
-                    <div class="form-step active" data-step="3">
-                        <h2>Legal Documentation</h2>
-
-                        
-                        <p class="info"><i class="fa-solid fa-exclamation"></i> Here are the recommended legal documents that you can submit to immediately get verified:</p>
-                        <ul class="document-list">
-                            <li>Business Permit</li>
-                            <li>Tax Identification Number (TIN)</li>
-                            <li>Lease Agreement</li>
-                            <li>Business License</li>
-                            <li>Barangay Clearance</li>
-                        </ul>
-
-                        <p class="info"><i class="fa-solid fa-exclamation"></i> Please ensure that you provide two or more of the following legal documents for verification purposes:</p>
-                        <div class="form-group">
-                            <select name="document-type" id="document-type">
-                                <option value="business-permit">Business Permit</option>
-                                <option value="tax-id">Tax Identification Number (TIN)</option>
-                                <option value="lease-agreement">Lease Agreement</option>
-                                <option value="business-license">Business License</option>
-                                <option value="barangay-clearance">Barangay Clearance</option>
-                            </select>
-                            <input type="file" name="document-file" id="document-file">
-                            <button type="button" onclick="uploadFile()">Upload File</button>
+                    <div class="form-step" data-step="3">
+                        <div class="form-inputs">
+                            <h2>Legal Documentation</h2>
+                            <p class="info"><i class="fa-solid fa-circle-info"></i> Here are the recommended legal documents that you can submit to immediately get verified:</p>
+                            <ul class="document-list">
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Business Permit</li>
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Tax Identification Number (TIN)</li>
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Lease Agreement</li>
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Business License</li>
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Barangay Clearance</li>
+                            </ul>
+                    
+                            <p class="info"><i class="fa-solid fa-circle-info"></i> Please ensure that you provide two or more of the following legal documents for verification purposes:</p>
+                            <div id="document-fields">
+                                <div class="form-group">
+                                    <select name="document-type-1" id="document-type-1">
+                                        <option value="business-permit">Business Permit</option>
+                                        <option value="tax-id">Tax Identification Number (TIN)</option>
+                                        <option value="lease-agreement">Lease Agreement</option>
+                                        <option value="business-license">Business License</option>
+                                        <option value="barangay-clearance">Barangay Clearance</option>
+                                    </select>
+                                    <div class="file-input-container">
+                                        <input type="file" name="document-file-1" id="document-file-1" class="file-input">
+                                        <label for="document-file-1" class="custom-file-label">Upload File</label>
+                                        <span class="file-name" id="fileName-1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="add-document" onclick="addDocumentField()"><i class="fa-solid fa-plus"></i> Add another document</a>
                         </div>
-                        <div id="additional-documents"></div>
-                        
-                        <a href="#" class="add-document" onclick="addDocumentField()">+ Add another document</a>
-                        
                         <div class="form-navigation-buttons">
                             <button type="button" class="prev-btn">Previous</button>
                             <button type="button" class="next-btn">Next</button>
                         </div>
                     </div>
-                    <div class="form-step" data-step="4">
-                        <h2>Proof of Ownership</h2>
-                        
+                    
+                    <div class="form-step active" data-step="4">
+                        <div class="form-inputs">
+                            <h2>Proof of Ownership</h2>
+                            <p class="info"><i class="fa-solid fa-circle-info"></i> Here are the recommended proof of ownership documents that you can submit:</p>
+                            <ul class="document-list">
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Property Title</li>
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Certificate of Occupancy</li>
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Commercial Insurance Policy</li>
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Utility Bills</li>
+                                <li><i class="fa-sharp fa-solid fa-circle"></i>Tax Assessment</li>
+                            </ul>
+                            
+                            <p class="info"><i class="fa-solid fa-circle-info"></i> Please ensure that you provide two or more of the following proof of ownership documents for verification purposes:</p>
+                            <div id="proof-of-ownership-fields">
+                                <div class="form-group">
+                                    <select name="proof-type-1" id="proof-type-1">
+                                        <option value="property-title">Property Title</option>
+                                        <option value="certificate-of-occupancy">Certificate of Occupancy</option>
+                                        <option value="insurance-policy">Commercial Insurance Policy</option>
+                                        <option value="utility-bills">Utility Bills</option>
+                                        <option value="tax-assessment">Tax Assessment</option>
+                                    </select>
+                                    <div class="file-input-container">
+                                        <input type="file" name="proof-file-1" id="proof-file-1" class="file-input">
+                                        <label for="proof-file-1" class="custom-file-label">Upload File</label>
+                                        <span class="file-name" id="proofFileName-1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="add-proof" onclick="addProofField()"><i class="fa-solid fa-plus"></i> Add another document</a>
+                        </div>
+                    
                         <div class="form-navigation-buttons">
                             <button type="button" class="prev-btn">Previous</button>
                             <button type="button" class="next-btn">Next</button>
                         </div>
                     </div>
+                    
                     <div class="form-step" data-step="5">
                         <h2>Terms and Conditions</h2>
                         
