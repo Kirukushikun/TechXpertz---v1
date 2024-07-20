@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-step Form</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/Technician - Styling/1 - Registration.css">
 </head>
@@ -38,7 +38,7 @@
                 </div>
 
                 <form id="registrationForm"> 
-                    <div class="form-step" data-step="1">
+                    <div class="form-step active" data-step="1">
                         <div class="form-inputs">
                             <h2>Personal Information</h2>
                             <div class="input-container">
@@ -148,7 +148,7 @@
                             </ul>
                     
                             <p class="info"><i class="fa-solid fa-circle-info"></i> Please ensure that you provide two or more of the following legal documents for verification purposes:</p>
-                            <div id="document-fields">
+                            <div id="document-fields" class="document-fields">
                                 <div class="form-group">
                                     <select name="document-type-1" id="document-type-1">
                                         <option value="business-permit">Business Permit</option>
@@ -159,7 +159,7 @@
                                     </select>
                                     <div class="file-input-container">
                                         <input type="file" name="document-file-1" id="document-file-1" class="file-input">
-                                        <label for="document-file-1" class="custom-file-label">Upload File</label>
+                                        <label for="document-file-1" class="custom-file-label">Choose File</label>
                                         <span class="file-name" id="fileName-1"></span>
                                     </div>
                                 </div>
@@ -172,7 +172,7 @@
                         </div>
                     </div>
                     
-                    <div class="form-step active" data-step="4">
+                    <div class="form-step" data-step="4">
                         <div class="form-inputs">
                             <h2>Proof of Ownership</h2>
                             <p class="info"><i class="fa-solid fa-circle-info"></i> Here are the recommended proof of ownership documents that you can submit:</p>
@@ -185,7 +185,7 @@
                             </ul>
                             
                             <p class="info"><i class="fa-solid fa-circle-info"></i> Please ensure that you provide two or more of the following proof of ownership documents for verification purposes:</p>
-                            <div id="proof-of-ownership-fields">
+                            <div id="proof-of-ownership-fields" class="document-fields">
                                 <div class="form-group">
                                     <select name="proof-type-1" id="proof-type-1">
                                         <option value="property-title">Property Title</option>
@@ -196,7 +196,7 @@
                                     </select>
                                     <div class="file-input-container">
                                         <input type="file" name="proof-file-1" id="proof-file-1" class="file-input">
-                                        <label for="proof-file-1" class="custom-file-label">Upload File</label>
+                                        <label for="proof-file-1" class="custom-file-label">Choose File</label>
                                         <span class="file-name" id="proofFileName-1"></span>
                                     </div>
                                 </div>
@@ -212,23 +212,307 @@
                     
                     <div class="form-step" data-step="5">
                         <h2>Terms and Conditions</h2>
-                        
+                        <div class="terms-condition">
+                            <div class="section">
+                                <h3>General Terms</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula dui eu urna tincidunt, ac bibendum nisi sollicitudin. Mauris ut tortor et magna gravida vestibulum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>License</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Cras bibendum, sapien eu lacinia vehicula, neque turpis varius magna, vel sollicitudin felis mauris nec nisl.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Definitions and Key Terms</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod, leo vel malesuada lacinia, orci nulla efficitur nulla, sit amet tincidunt nulla erat non sapien.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Restrictions</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac eros vel magna vehicula fermentum. Curabitur dictum purus vitae ligula sollicitudin fringilla. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Payment Return and Refund Policy</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Your Suggestions</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, velit ac porttitor vehicula, nulla lacus bibendum nulla, at vestibulum turpis leo sit amet sapien. Suspendisse potenti.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Your Consent</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Link to Other Websites</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor. Sed vehicula augue a ligula gravida, a tincidunt dui pulvinar.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Cookies</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque metus sit amet ultricies bibendum. Morbi vitae ligula sit amet libero venenatis commodo.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Changes To Our Terms & Conditions</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et orci at odio consectetur blandit. Donec nec felis lorem. Phasellus a urna eu odio consequat hendrerit.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Modifications to Our Service</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor massa nec ante gravida, sit amet cursus dui condimentum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Updates to Our Service</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et sapien ut justo faucibus elementum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Third-Party Services</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula dui eu urna tincidunt, ac bibendum nisi sollicitudin. Mauris ut tortor et magna gravida vestibulum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Term and Termination</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Cras bibendum, sapien eu lacinia vehicula, neque turpis varius magna, vel sollicitudin felis mauris nec nisl.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Copyright Infringement Notice</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod, leo vel malesuada lacinia, orci nulla efficitur nulla, sit amet tincidunt nulla erat non sapien.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Indemnification</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac eros vel magna vehicula fermentum. Curabitur dictum purus vitae ligula sollicitudin fringilla. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>No Warranties</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Limitation of Liability</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, velit ac porttitor vehicula, nulla lacus bibendum nulla, at vestibulum turpis leo sit amet sapien. Suspendisse potenti.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Severability</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Waiver</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor. Sed vehicula augue a ligula gravida, a tincidunt dui pulvinar.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Amendments to this Agreement</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque metus sit amet ultricies bibendum. Morbi vitae ligula sit amet libero venenatis commodo.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Entire Agreement</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et orci at odio consectetur blandit. Donec nec felis lorem. Phasellus a urna eu odio consequat hendrerit.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Updates to Our Terms</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor massa nec ante gravida, sit amet cursus dui condimentum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Intellectual Property</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et sapien ut justo faucibus elementum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Agreement to Arbitrate</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula dui eu urna tincidunt, ac bibendum nisi sollicitudin. Mauris ut tortor et magna gravida vestibulum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Notice of Dispute</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Cras bibendum, sapien eu lacinia vehicula, neque turpis varius magna, vel sollicitudin felis mauris nec nisl.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Binding Arbitration</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod, leo vel malesuada lacinia, orci nulla efficitur nulla, sit amet tincidunt nulla erat non sapien.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Submissions and Privacy</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac eros vel magna vehicula fermentum. Curabitur dictum purus vitae ligula sollicitudin fringilla. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Promotions</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Typographical Errors</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, velit ac porttitor vehicula, nulla lacus bibendum nulla, at vestibulum turpis leo sit amet sapien. Suspendisse potenti.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Miscellaneous</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Disclaimer</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor. Sed vehicula augue a ligula gravida, a tincidunt dui pulvinar.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Contact Us</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor massa nec ante gravida, sit amet cursus dui condimentum.</p>
+                            </div>
+                        </div>
                         <div class="form-navigation-buttons">
                             <button type="button" class="prev-btn">Previous</button>
                             <button type="button" class="next-btn">Next</button>
                         </div>
                     </div>
+
                     <div class="form-step" data-step="6">
                         <h2>Privacy Policy</h2>
-                        
+                        <div class="terms-condition">
+                            <div class="section">
+                                <h3>General Terms</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula dui eu urna tincidunt, ac bibendum nisi sollicitudin. Mauris ut tortor et magna gravida vestibulum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>License</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Cras bibendum, sapien eu lacinia vehicula, neque turpis varius magna, vel sollicitudin felis mauris nec nisl.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Definitions and Key Terms</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod, leo vel malesuada lacinia, orci nulla efficitur nulla, sit amet tincidunt nulla erat non sapien.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Restrictions</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac eros vel magna vehicula fermentum. Curabitur dictum purus vitae ligula sollicitudin fringilla. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Payment Return and Refund Policy</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Your Suggestions</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, velit ac porttitor vehicula, nulla lacus bibendum nulla, at vestibulum turpis leo sit amet sapien. Suspendisse potenti.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Your Consent</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Link to Other Websites</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor. Sed vehicula augue a ligula gravida, a tincidunt dui pulvinar.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Cookies</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque metus sit amet ultricies bibendum. Morbi vitae ligula sit amet libero venenatis commodo.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Changes To Our Terms & Conditions</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et orci at odio consectetur blandit. Donec nec felis lorem. Phasellus a urna eu odio consequat hendrerit.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Modifications to Our Service</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor massa nec ante gravida, sit amet cursus dui condimentum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Updates to Our Service</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et sapien ut justo faucibus elementum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Third-Party Services</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula dui eu urna tincidunt, ac bibendum nisi sollicitudin. Mauris ut tortor et magna gravida vestibulum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Term and Termination</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Cras bibendum, sapien eu lacinia vehicula, neque turpis varius magna, vel sollicitudin felis mauris nec nisl.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Copyright Infringement Notice</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod, leo vel malesuada lacinia, orci nulla efficitur nulla, sit amet tincidunt nulla erat non sapien.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Indemnification</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac eros vel magna vehicula fermentum. Curabitur dictum purus vitae ligula sollicitudin fringilla. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>No Warranties</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Limitation of Liability</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, velit ac porttitor vehicula, nulla lacus bibendum nulla, at vestibulum turpis leo sit amet sapien. Suspendisse potenti.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Severability</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Waiver</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor. Sed vehicula augue a ligula gravida, a tincidunt dui pulvinar.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Amendments to this Agreement</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque metus sit amet ultricies bibendum. Morbi vitae ligula sit amet libero venenatis commodo.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Entire Agreement</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et orci at odio consectetur blandit. Donec nec felis lorem. Phasellus a urna eu odio consequat hendrerit.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Updates to Our Terms</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor massa nec ante gravida, sit amet cursus dui condimentum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Intellectual Property</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et sapien ut justo faucibus elementum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Agreement to Arbitrate</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula dui eu urna tincidunt, ac bibendum nisi sollicitudin. Mauris ut tortor et magna gravida vestibulum.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Notice of Dispute</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Cras bibendum, sapien eu lacinia vehicula, neque turpis varius magna, vel sollicitudin felis mauris nec nisl.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Binding Arbitration</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod, leo vel malesuada lacinia, orci nulla efficitur nulla, sit amet tincidunt nulla erat non sapien.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Submissions and Privacy</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac eros vel magna vehicula fermentum. Curabitur dictum purus vitae ligula sollicitudin fringilla. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Promotions</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Typographical Errors</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia, velit ac porttitor vehicula, nulla lacus bibendum nulla, at vestibulum turpis leo sit amet sapien. Suspendisse potenti.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Miscellaneous</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec erat nec mi dapibus tincidunt.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Disclaimer</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a libero eget nisi vehicula convallis sit amet non tortor. Sed vehicula augue a ligula gravida, a tincidunt dui pulvinar.</p>
+                            </div>
+                            <div class="section">
+                                <h3>Contact Us</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor massa nec ante gravida, sit amet cursus dui condimentum.</p>
+                            </div>
+                        </div>
                         <div class="form-navigation-buttons">
                             <button type="button" class="prev-btn">Previous</button>
                             <button type="button" class="next-btn">Next</button>
                         </div>
                     </div>
+
                     <div class="form-step" data-step="7">
                         <h2>Security</h2>
-                        
+                        <div class="security">
+                            <div class="input-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username">
+                            </div>
+                            <div class="group-container">
+                                <div class="input-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password">
+                                </div>
+                                <div class="input-group">
+                                    <label for="confirm-password">Confirm Password</label>
+                                    <input type="password" id="confirm-password" name="confirm-password">
+                                </div>                                
+                            </div>
+                            <p>By creating an account, you agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a></p>
+                        </div>
                         <div class="form-navigation-buttons">
                             <button type="button" class="prev-btn">Previous</button>
                             <button type="submit">Submit</button>
