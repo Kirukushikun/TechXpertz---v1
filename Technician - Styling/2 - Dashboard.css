@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --highlight: #9147F2;
+    --primary-color: #7B5CAD;
+    --secondary-color: #EEE3FF;
+    --dark-grey: #666666;
+    --light-grey: #f0f0f0;
+    --white: #FFFFFF;
+
+    --text-color: #383838;
+    --lighted-text-color: #999999;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+
+.dashboard {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 270px;
+    height: 100vh;
+    background-color: var(--white);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position:fixed;
+}
+
+.logo {
+    text-align: center;
+    margin: 20px 0 40px;
+}.logo h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-color);
+}.logo h2 span {
+    color: var(--highlight);
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+nav ul li {
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+nav ul li a {
+    margin: 15px 0;
+    padding: 10px 20px;
+
+    color: var(--lighted-text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 15px;
+}
+
+nav ul li.active{
+    background-color: var(--primary-color);
+}nav ul li.active a{
+    color: var(--white);
+}
+
+.sidebar-footer {
+    text-align: center;
+}
+
+.logout {
+    background-color: var(--white);
+    border: 2px solid #538add;
+    border-radius: 8px;
+    color: #538add;
+
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.dark-mode{  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    position: relative;
+}
+
+.stat h2 {
+    margin: 0 0 10px;
+}
+
+.stat p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.stat .up {
+    color: #4caf50;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.stat .down {
+    color: #f44336;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.appointments, .appointment-summary, .upcoming-appointments {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.appointments table, .upcoming-appointments table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.appointments table th, .appointments table td, .upcoming-appointments table th, .upcoming-appointments table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.appointments table th, .upcoming-appointments table th {
+    background-color: #f5f5f5;
+}
+
+.appointment-summary {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-cards {
+    display: flex;
+    flex: 1;
+}
+
+.summary-card {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.summary-card h3 {
+    margin: 0 0 10px;
+}
+
+.summary-card p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.upcoming-appointments table button, .appointments table button {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upcoming-appointments table button.edit, .upcoming-appointments table button.delete {
+    background-color: transparent;
+    color: #6a1b9a;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+} */

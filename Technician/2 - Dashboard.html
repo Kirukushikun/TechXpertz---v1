@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/Technician - Styling/2 - Dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="dashboard">
+
+        <aside class="sidebar">
+
+            <nav>
+                <div class="logo">
+                    <h2>Tech<span>X</span>pertz</h2>
+                </div>
+
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Appointment</a></li>
+                    <li><a href="#"><i class="fas fa-tools"></i> Repair Status</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Customer</a></li>
+                    <li><a href="#"><i class="fas fa-star"></i> Shop Reviews</a></li>
+                    <li><a href="#"><i class="fas fa-user-cog"></i> Manage Profile</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="logout">LOG OUT</button>
+                
+                <div class="dark-mode">
+                    <span>Dark mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="slider round"></span>
+                    </label>                    
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- <main class="main-content">
+            <header>
+                <h1>Dashboard</h1>
+            </header>
+            <section class="stats">
+                <div class="stat">
+                    <h2>Revenue</h2>
+                    <p>₱35.2K</p>
+                    <span class="up">+ 22%</span>
+                </div>
+                <div class="stat">
+                    <h2>Repairs</h2>
+                    <p>58</p>
+                    <span class="down">- 25%</span>
+                </div>
+                <div class="stat">
+                    <h2>Visitors</h2>
+                    <p>1.5K</p>
+                    <span class="up">+ 49%</span>
+                </div>
+                <div class="stat">
+                    <h2>Reviews</h2>
+                    <p>55</p>
+                    <span class="up">+ 1.9%</span>
+                </div>
+            </section>
+            <section class="appointments">
+                <div class="appointments-requests">
+                    <h2>Appointment Requests</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Device Type</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>More</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hazel Nutt</td>
+                                <td>Laptop</td>
+                                <td>29/04/24</td>
+                                <td>10AM</td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>Speaker</td>
+                                <td>02/05/24</td>
+                                <td>12PM</td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Marsha Mellow</td>
+                                <td>Desktop</td>
+                                <td>03/05/24</td>
+                                <td>3PM</td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Aida Bugg</td>
+                                <td>Laptop</td>
+                                <td>06/05/24</td>
+                                <td>9AM</td>
+                                <td><button>View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="appointment-summary">
+                    <h2>Appointment Summary</h2>
+                    <div class="summary-cards">
+                        <div class="summary-card">
+                            <h3>Upcoming</h3>
+                            <p>7</p>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Requests</h3>
+                            <p>25</p>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Pending Repairs</h3>
+                            <p>5</p>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Completed Repairs</h3>
+                            <p>4</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="upcoming-appointments">
+                <h2>Upcoming Appointments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Details</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chris P. Bacon</td>
+                            <td>chrispbacon@gmail.com</td>
+                            <td>04567890231</td>
+                            <td>April 30, 2024</td>
+                            <td>8AM - 9AM</td>
+                            <td><button>View</button></td>
+                            <td>
+                                <button class="edit"><i class="fas fa-edit"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chris P. Bacon</td>
+                            <td>chrispbacon@gmail.com</td>
+                            <td>04567890231</td>
+                            <td>May 30, 2024</td>
+                            <td>8AM - 9AM</td>
+                            <td><button>View</button></td>
+                            <td>
+                                <button class="edit"><i class="fas fa-edit"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chris P. Bacon</td>
+                            <td>chrispbacon@gmail.com</td>
+                            <td>04567890231</td>
+                            <td>May 30, 2024</td>
+                            <td>8AM - 9AM</td>
+                            <td><button>View</button></td>
+                            <td>
+                                <button class="edit"><i class="fas fa-edit"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chris P. Bacon</td>
+                            <td>chrispbacon@gmail.com</td>
+                            <td>04567890231</td>
+                            <td>May 30, 2024</td>
+                            <td>8AM - 9AM</td>
+                            <td><button>View</button></td>
+                            <td>
+                                <button class="edit"><i class="fas fa-edit"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chris P. Bacon</td>
+                            <td>chrispbacon@gmail.com</td>
+                            <td>04567890231</td>
+                            <td>May 30, 2024</td>
+                            <td>8AM - 9AM</td>
+                            <td><button>View</button></td>
+                            <td>
+                                <button class="edit"><i class="fas fa-edit"></i></button>
+                                <button class="delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -3,105 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Upload</title>
-    <link rel="stylesheet" href="/Technician - Styling/1 - Registration.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-
-</head>
-<body>
-    <div class="form-inputs">
-        <h2>Legal Documentation</h2>
-        <p class="info"><i class="fa-solid fa-circle-info"></i> Here are the recommended legal documents that you can submit to immediately get verified:</p>
-        <ul class="document-list">
-            <li><i class="fa-sharp fa-solid fa-circle"></i>Business Permit</li>
-            <li><i class="fa-sharp fa-solid fa-circle"></i>Tax Identification Number (TIN)</li>
-            <li><i class="fa-sharp fa-solid fa-circle"></i>Lease Agreement</li>
-            <li><i class="fa-sharp fa-solid fa-circle"></i>Business License</li>
-            <li><i class="fa-sharp fa-solid fa-circle"></i>Barangay Clearance</li>
-        </ul>
-
-        <p class="info"><i class="fa-solid fa-circle-info"></i> Please ensure that you provide two or more of the following legal documents for verification purposes:</p>
-        <div id="document-fields">
-            <div class="form-group">
-                <select name="document-type-1" id="document-type-1">
-                    <option value="business-permit">Business Permit</option>
-                    <option value="tax-id">Tax Identification Number (TIN)</option>
-                    <option value="lease-agreement">Lease Agreement</option>
-                    <option value="business-license">Business License</option>
-                    <option value="barangay-clearance">Barangay Clearance</option>
-                </select>
-                <div class="file-input-container">
-                    <input type="file" name="document-file-1" id="document-file-1" class="file-input">
-                    <label for="document-file-1" class="custom-file-label">Upload File</label>
-                    <span class="file-name" id="fileName-1"></span>
-                </div>
-            </div>
-        </div>
-        <a href="#" class="add-document" onclick="addDocumentField()"><i class="fa-solid fa-plus"></i> Add another document</a>
-    </div>
-
-
-    <div class="form-container">
-        <div class="form-step active" data-step="3">
-            <div class="form-inputs">
-                <h2>Legal Documents</h2>                
-            </div>
-
-            <div class="form-navigation-buttons">
-                <button type="button" class="prev-btn">Previous</button>
-                <button type="button" class="next-btn">Next</button>
-            </div>
-        </div>
-
-        <div class="form-step active" data-step="4">
-            <div class="form-inputs">
-                <h2>Proof of Ownership</h2>                
-            </div>
-            <div class="form-navigation-buttons">
-                <button type="button" class="prev-btn">Previous</button>
-                <button type="button" class="next-btn">Next</button>
-            </div>
-        </div>
-    </div>
-
-
-    <script>
-        let documentCount = 1; // Start with the first document slot
-
-        function addDocumentField() {
-            documentCount++;
-            const additionalDocuments = document.getElementById("document-fields");
-            const newFormGroup = document.createElement("div");
-            newFormGroup.className = "form-group";
-            const uniqueId = documentCount; // Ensure uniqueness with documentCount
-            newFormGroup.innerHTML = `
-                <select name="document-type-${uniqueId}" id="document-type-${uniqueId}">
-                    <option value="business-permit">Business Permit</option>
-                    <option value="tax-id">Tax Identification Number (TIN)</option>
-                    <option value="lease-agreement">Lease Agreement</option>
-                    <option value="business-license">Business License</option>
-                    <option value="barangay-clearance">Barangay Clearance</option>
-                </select>
-                <div class="file-input-container">
-                    <input type="file" name="document-file-${uniqueId}" id="document-file-${uniqueId}" class="file-input">
-                    <label for="document-file-${uniqueId}" class="custom-file-label">Choose File</label>
-                    <span class="file-name" id="fileName-${uniqueId}"></span>
-                </div>
-            `;
-            additionalDocuments.appendChild(newFormGroup);
-
-            // Add event listener to the new file input
-            document.getElementById(`document-file-${uniqueId}`).addEventListener('change', function() {
-                const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
-                document.getElementById(`fileName-${uniqueId}`).textContent = fileName;
-            });
+    <title>Fixed Sidebar Example</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
 
-        // Initial event listener for the first file input
-        document.getElementById('document-file-1').addEventListener('change', function() {
-            const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
-            document.getElementById('fileName-1').textContent = fileName;
-        });
-    </script>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+
+        .main-content {
+            margin-left: 250px; /* Same width as the sidebar */
+            padding: 15px;
+            background-color: #f4f4f4;
+            height: 200vh; /* For demonstration purposes */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>This is a fixed sidebar.</p>
+        <ul>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Main Content</h1>
+        <p>This is the main content area. Scroll down to see the effect of the fixed sidebar.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis scelerisque augue, at viverra odio tincidunt ut. Nullam lacinia mi in est ultricies, quis cursus arcu vestibulum. Donec dapibus interdum eros. Nam eget eros nec nunc egestas interdum. Integer laoreet malesuada lacus, sed convallis velit efficitur ut. Donec at risus tincidunt, tempus lorem at, lacinia massa. Pellentesque dictum justo nec odio interdum tincidunt.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis scelerisque augue, at viverra odio tincidunt ut. Nullam lacinia mi in est ultricies, quis cursus arcu vestibulum. Donec dapibus interdum eros. Nam eget eros nec nunc egestas interdum. Integer laoreet malesuada lacus, sed convallis velit efficitur ut. Donec at risus tincidunt, tempus lorem at, lacinia massa. Pellentesque dictum justo nec odio interdum tincidunt.</p>
+    </div>
 </body>
 </html>
