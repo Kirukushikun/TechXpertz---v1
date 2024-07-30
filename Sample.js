@@ -1,33 +1,47 @@
-let documentCount = 0;
+document.addEventListener('DOMContentLoaded', function () {
+    const previousRevenue = 29000; // Previous month's revenue
+    const currentRevenue = 35200; // Current month's revenue
 
-function uploadFile() {
-    alert("File uploaded! (This is a placeholder action.)");
-}
+    const revenueChange = ((currentRevenue - previousRevenue) / previousRevenue) * 100;
+    document.getElementById('revenueChange').textContent = `${revenueChange.toFixed(1)}%`;
 
-function addDocumentField() {
-    documentCount++;
-    const additionalDocuments = document.getElementById("additional-documents");
-    const newFormGroup = document.createElement("div");
-    newFormGroup.className = "form-group";
-    newFormGroup.innerHTML = `
-        <select name="document-type-${documentCount}" id="document-type-${documentCount}">
-            <option value="business-permit">Business Permit</option>
-            <option value="tax-id">Tax Identification Number (TIN)</option>
-            <option value="lease-agreement">Lease Agreement</option>
-            <option value="business-license">Business License</option>
-            <option value="barangay-clearance">Barangay Clearance</option>
-        </select>
-        <input type="file" name="document-file-${documentCount}" id="document-file-${documentCount}">
-        <button type="button" onclick="uploadFile()">Upload File</button>
-    `;
-    additionalDocuments.appendChild(newFormGroup);
-}
+    const ctx = document.getElementById('revenueChart').getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 0, 100);
+    gradient.addColorStop(0, 'rgba(106, 27, 154, 0.5)');
+    gradient.addColorStop(1, 'rgba(106, 27, 154, 0)');
 
-function previousStep() {
-    alert("Going back to the previous step. (This is a placeholder action.)");
-}
+    const data = {
+        labels: ['Previous', 'Current'],
+        datasets: [{
+            data: [previousRevenue, currentRevenue],
+            borderColor: '#6a1b9a',
+            backgroundColor: gradient,
+            fill: true,
+            tension: 0.4
+        }]
+    };
 
-document.getElementById("document-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Form submitted! (This is a placeholder action.)");
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: false
+                },
+                y: {
+                    display: false
+                }
+            }
+        }
+    };
+
+    new Chart(ctx, config);
 });

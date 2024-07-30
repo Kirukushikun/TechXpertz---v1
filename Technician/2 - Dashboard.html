@@ -42,35 +42,61 @@
 
         </aside>
 
-        <!-- <main class="main-content">
+        <main class="main-content">
             <header>
                 <h1>Dashboard</h1>
             </header>
+
             <section class="stats">
-                <div class="stat">
-                    <h2>Revenue</h2>
-                    <p>₱35.2K</p>
-                    <span class="up">+ 22%</span>
+                <div class="stat revenue-card">
+                    <div class="info">
+                        <p>Revenue</p>
+                        <h2>P35.2K</h2>
+                    </div>
+                    <div class="progress revenue">
+                        <h4 class="percentage">+22%</h4>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
                 </div>
-                <div class="stat">
-                    <h2>Repairs</h2>
-                    <p>58</p>
-                    <span class="down">- 25%</span>
+                <div class="stat repairs-card">
+                    <div class="info">
+                        <p>Repairs</p>
+                        <h2>58</h2>
+                    </div>
+                    <div class="progress repairs">
+                        <h4 class="percentage">-25%</h4>
+                        <i class="fa-solid fa-arrow-trend-down"></i>
+                    </div>
                 </div>
-                <div class="stat">
-                    <h2>Visitors</h2>
-                    <p>1.5K</p>
-                    <span class="up">+ 49%</span>
+                <div class="stat visitors-card">
+                    <div class="info">
+                        <p>Visitors</p>
+                        <h2>1.5K</h2>
+                    </div>
+                    <div class="progress visitors">
+                        <h4 class="percentage">+49%</h4>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
                 </div>
-                <div class="stat">
-                    <h2>Reviews</h2>
-                    <p>55</p>
-                    <span class="up">+ 1.9%</span>
+                <div class="stat reviews-card">
+                    <div class="info">
+                        <p>Reviews</p>
+                        <h2>55</h2>
+                    </div>
+                    <div class="progress reviews">
+                        <h4 class="percentage">+1.9%</h4>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
                 </div>
             </section>
+            
             <section class="appointments">
-                <div class="appointments-requests">
-                    <h2>Appointment Requests</h2>
+                <div class="appointments-requests card">
+                    <div class="actions">
+                        <h2>Appointment Requests</h2>
+                        <a href="">More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    
                     <table>
                         <thead>
                             <tr>
@@ -83,28 +109,28 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Hazel Nutt</td>
+                                <td class="profile-cell"> Hazel Nutt</td>
                                 <td>Laptop</td>
                                 <td>29/04/24</td>
                                 <td>10AM</td>
                                 <td><button>View</button></td>
                             </tr>
                             <tr>
-                                <td>Chris P. Bacon</td>
+                                <td class="profile-cell"> Chris P. Bacon</td>
                                 <td>Speaker</td>
                                 <td>02/05/24</td>
                                 <td>12PM</td>
                                 <td><button>View</button></td>
                             </tr>
                             <tr>
-                                <td>Marsha Mellow</td>
+                                <td class="profile-cell"> Marsha Mellow</td>
                                 <td>Desktop</td>
                                 <td>03/05/24</td>
                                 <td>3PM</td>
                                 <td><button>View</button></td>
                             </tr>
                             <tr>
-                                <td>Aida Bugg</td>
+                                <td class="profile-cell"> Aida Bugg</td>
                                 <td>Laptop</td>
                                 <td>06/05/24</td>
                                 <td>9AM</td>
@@ -113,30 +139,49 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="appointment-summary">
-                    <h2>Appointment Summary</h2>
+                <div class="appointment-summary card">
+                    <div class="actions">
+                        <h2>Activity Summary</h2>
+                        <a href="">More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                     <div class="summary-cards">
                         <div class="summary-card">
-                            <h3>Upcoming</h3>
-                            <p>7</p>
+                            <div class="info">
+                                <p>Upcoming</p>
+                                <h2>7</h2>                                
+                            </div>
+                            <i class="fa-solid fa-calendar-day upcoming"></i>
                         </div>
                         <div class="summary-card">
-                            <h3>Requests</h3>
-                            <p>25</p>
+                            <div class="info">
+                                <p>Requests</p>
+                                <h2>25</h2>                                
+                            </div>
+                            <i class="fa-solid fa-calendar-plus request"></i>
                         </div>
                         <div class="summary-card">
-                            <h3>Pending Repairs</h3>
-                            <p>5</p>
+                            <div class="info">
+                                <p>Pending Repairs</p>
+                                <h2>5</h2>                                
+                            </div>
+                            <i class="fa-solid fa-screwdriver-wrench pending"></i>
                         </div>
                         <div class="summary-card">
-                            <h3>Completed Repairs</h3>
-                            <p>4</p>
+                            <div class="info">
+                                <p>Completed Repairs</p>
+                                <h2>4</h2>                                
+                            </div>
+                            <i class="fa-solid fa-check-double completed"></i>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="upcoming-appointments">
-                <h2>Upcoming Appointments</h2>
+
+            <section class="upcoming-appointments card">
+                <div class="actions">
+                    <h2>Upcoming Appointments</h2>
+                    <a href="">More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
                 <table>
                     <thead>
                         <tr>
@@ -158,8 +203,9 @@
                             <td>8AM - 9AM</td>
                             <td><button>View</button></td>
                             <td>
-                                <button class="edit"><i class="fas fa-edit"></i></button>
-                                <button class="delete"><i class="fas fa-trash"></i></button>
+                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -170,8 +216,9 @@
                             <td>8AM - 9AM</td>
                             <td><button>View</button></td>
                             <td>
-                                <button class="edit"><i class="fas fa-edit"></i></button>
-                                <button class="delete"><i class="fas fa-trash"></i></button>
+                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -182,8 +229,9 @@
                             <td>8AM - 9AM</td>
                             <td><button>View</button></td>
                             <td>
-                                <button class="edit"><i class="fas fa-edit"></i></button>
-                                <button class="delete"><i class="fas fa-trash"></i></button>
+                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -194,8 +242,9 @@
                             <td>8AM - 9AM</td>
                             <td><button>View</button></td>
                             <td>
-                                <button class="edit"><i class="fas fa-edit"></i></button>
-                                <button class="delete"><i class="fas fa-trash"></i></button>
+                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
                             </td>
                         </tr>
                         <tr>
@@ -206,14 +255,15 @@
                             <td>8AM - 9AM</td>
                             <td><button>View</button></td>
                             <td>
-                                <button class="edit"><i class="fas fa-edit"></i></button>
-                                <button class="delete"><i class="fas fa-trash"></i></button>
+                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </section>
-        </main> -->
+        </main>
     </div>
     <script src="script.js"></script>
 </body>

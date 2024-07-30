@@ -152,123 +152,161 @@ input:checked + .slider:before {
     transform: translateX(14px);
 }
 
-/* .main-content {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
+.main-content {
+    width: 100%;
+    padding: 40px 30px;
+    margin-left: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    opacity: 0.8;
+    background-color: #f8f8f8;
 }
 
 header {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    width: 100%;    
 }
+
+.card{
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}.card .actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+}.card .actions h2{
+    font-size: 20px;
+    font-weight: 600;
+}.card .actions a{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 500;
+}.card .actions i{
+    margin-left: 7px;
+}
+.card table{
+    border-collapse: collapse;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+}.card table th{
+    padding: 15px 25px;
+    font-weight: 600;
+}.card table td{
+    padding: 15px 25px;
+    background-color: white;
+    border-top: solid #d9d9d9 2px;
+}.card table td button{
+    border: none;
+    border-radius: 7px;
+    color: white;
+    padding: 8px 15px;
+    font-weight: 300;
+    cursor: pointer;
+    background-color: var(--primary-color);
+}.card table td a{
+    text-decoration: none;
+    color: var(--text-color);
+    margin-right: 10px;
+    font-size: 20px;
+}
+
 
 .stats {
+    width: 100%;    
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.stat {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1;
-    margin: 0 10px;
-    text-align: center;
-    position: relative;
-}
-
-.stat h2 {
-    margin: 0 0 10px;
-}
-
-.stat p {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.stat .up {
-    color: #4caf50;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.stat .down {
-    color: #f44336;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.appointments, .appointment-summary, .upcoming-appointments {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.appointments table, .upcoming-appointments table {
+    gap: 30px;
+}.stats .stat{
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 35px;
+    border-radius: 10px;
+    background-color: var(--white);
+
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}.stats .stat .info p{
+    font-weight: 600;
+    color: var(--lighted-text-color);
+}.stats .stat .progress{
+    text-align: center;
+}.stats .stat .progress i{
+    font-size: 35px;
 }
 
-.appointments table th, .appointments table td, .upcoming-appointments table th, .upcoming-appointments table td {
-    border: 1px solid #ddd;
-    padding: 10px;
+.appointments{
+    width: 100%;    
+    display: flex;
+    gap: 30px;
+}
+
+.appointments-requests{
+    width: 50%;
+}.appointments-requests table{
+    width: 100%;
+}.appointments-requests table{
     text-align: left;
 }
 
-.appointments table th, .upcoming-appointments table th {
-    background-color: #f5f5f5;
-}
+.appointment-summary{
+    width: 50%;
 
-.appointment-summary {
+}.appointment-summary .summary-cards{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-}
 
-.summary-cards {
+    height: calc(100% - 40px);
+
+}.appointment-summary .summary-cards .summary-card{
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+
     display: flex;
-    flex: 1;
-}
-
-.summary-card {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    margin: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 35px;
     border-radius: 10px;
-    text-align: center;
+    background-color: var(--white);
+
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}.summary-card i{
+    font-size: 45px;
+}.summary-card p{
+    font-weight: 600;
+    color: var(--lighted-text-color);    
 }
 
-.summary-card h3 {
-    margin: 0 0 10px;
+
+
+.upcoming-appointments{
+    width: 100%;
+}.upcoming-appointments table{
+    width: 100%;
+}.upcoming-appointments table{
+    text-align: left;
 }
 
-.summary-card p {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
+
+.progress.revenue, .upcoming{
+    color: var(--primary-color);
 }
 
-.upcoming-appointments table button, .appointments table button {
-    background-color: #6a1b9a;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+.repairs, .pending{
+    color: #d76161;
 }
 
-.upcoming-appointments table button.edit, .upcoming-appointments table button.delete {
-    background-color: transparent;
-    color: #6a1b9a;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-} */
+.visitors, .completed{
+    color: #279f51;
+}
+
+.reviews, .request{
+    color: #ffa000;
+}

@@ -1,50 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Sidebar Example</title>
-    <style>
-        body {
-            display: flex;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 250px;
-            background-color: #333;
-            color: white;
-            padding: 15px;
-        }
-
-        .main-content {
-            margin-left: 250px; /* Same width as the sidebar */
-            padding: 15px;
-            background-color: #f4f4f4;
-            height: 200vh; /* For demonstration purposes */
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment Requests</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        width: 600px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .header {
+        padding: 20px;
+        border-bottom: 1px solid #e0e0e0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        color: #333;
+    }
+    .header a {
+        text-decoration: none;
+        color: #1a73e8;
+        font-weight: bold;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+    th {
+        background-color: #f9f9f9;
+        color: #666;
+        font-weight: normal;
+    }
+    td {
+        border-top: 1px solid #e0e0e0;
+    }
+    td img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .name-cell {
+        display: flex;
+        align-items: center;
+    }
+</style>
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Sidebar</h2>
-        <p>This is a fixed sidebar.</p>
-        <ul>
-            <li>Link 1</li>
-            <li>Link 2</li>
-            <li>Link 3</li>
-        </ul>
+
+<div class="container">
+    <div class="header">
+        <h2>Appointment Requests</h2>
+        <a href="#">More</a>
     </div>
-    <div class="main-content">
-        <h1>Main Content</h1>
-        <p>This is the main content area. Scroll down to see the effect of the fixed sidebar.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis scelerisque augue, at viverra odio tincidunt ut. Nullam lacinia mi in est ultricies, quis cursus arcu vestibulum. Donec dapibus interdum eros. Nam eget eros nec nunc egestas interdum. Integer laoreet malesuada lacus, sed convallis velit efficitur ut. Donec at risus tincidunt, tempus lorem at, lacinia massa. Pellentesque dictum justo nec odio interdum tincidunt.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce facilisis scelerisque augue, at viverra odio tincidunt ut. Nullam lacinia mi in est ultricies, quis cursus arcu vestibulum. Donec dapibus interdum eros. Nam eget eros nec nunc egestas interdum. Integer laoreet malesuada lacus, sed convallis velit efficitur ut. Donec at risus tincidunt, tempus lorem at, lacinia massa. Pellentesque dictum justo nec odio interdum tincidunt.</p>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Device Type</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="name-cell"><img src="https://via.placeholder.com/40" alt="Hazel Nutt">Hazel Nutt</td>
+                <td>Laptop</td>
+                <td>29/04/24</td>
+                <td>10AM - 11AM</td>
+            </tr>
+            <tr>
+                <td class="name-cell"><img src="https://via.placeholder.com/40" alt="Chris P. Bacon">Chris P. Bacon</td>
+                <td>Speaker</td>
+                <td>02/05/24</td>
+                <td>12NN - 1PM</td>
+            </tr>
+            <tr>
+                <td class="name-cell"><img src="https://via.placeholder.com/40" alt="Marsha Mellow">Marsha Mellow</td>
+                <td>Desktop</td>
+                <td>03/05/24</td>
+                <td>3PM - 4PM</td>
+            </tr>
+            <tr>
+                <td class="name-cell"><img src="https://via.placeholder.com/40" alt="Aida Bugg">Aida Bugg</td>
+                <td>Laptop</td>
+                <td>06/05/24</td>
+                <td>9AM - 10AM</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 </body>
 </html>
