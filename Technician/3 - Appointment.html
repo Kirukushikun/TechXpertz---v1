@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="/Technician - Styling/3 - Appointment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="dashboard">
+
+        <aside class="sidebar">
+
+            <nav>
+                <div class="logo">
+                    <h2>Tech<span>X</span>pertz</h2>
+                </div>
+
+                <ul>
+                    <li ><a href="/Technician/2 - Dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li class="active"><a href="/Technician/3 - Appointment.html"><i class="fas fa-calendar-alt"></i> Appointment</a></li>
+                    <li><a href="/Technician/4 - RepairStatus.html"><i class="fas fa-tools"></i> Repair Status</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Customer</a></li>
+                    <li><a href="/Technician/5 - ShopReviews.html"><i class="fas fa-star"></i> Shop Reviews</a></li>
+                    <li><a href="#"><i class="fas fa-user-cog"></i> Manage Profile</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="logout">LOG OUT</button>
+                
+                <div class="dark-mode">
+                    <span>Dark mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="slider round"></span>
+                    </label>                    
+                </div>
+            </div>
+
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Appointment</h1>
+            </header>
+
+            <div class="appointment-navigation">
+                <ul class="tabs">
+                    <li class="tab-link active" data-tab="upcoming">Upcoming</li>
+                    <li class="tab-link" data-tab="request">Appointment Request <span class="badge">3</span></li>
+                    <li class="tab-link" data-tab="completed">Completed Appointments</li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div id="upcoming" class="tab-content-item card active">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Details</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>April 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>April 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="request" class="tab-content-item card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Details</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>April 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="completed" class="tab-content-item card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Details</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>April 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chris P. Bacon</td>
+                                <td>chrispbacon@gmail.com</td>
+                                <td>04567890231</td>
+                                <td>May 30, 2024</td>
+                                <td>8AM - 9AM</td>
+                                <td><button>View</button></td>
+                                <td>
+                                    <a class="edit" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="delete" href=""><i class="fas fa-trash"></i></a>
+                                    <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/Technician - Javascript/3 - Appointment.js"></script>
+</body>
+</html>

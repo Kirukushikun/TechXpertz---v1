@@ -1,117 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Appointment Requests</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-    .container {
-        width: 600px;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    .header {
-        padding: 20px;
-        border-bottom: 1px solid #e0e0e0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .header h2 {
-        margin: 0;
-        font-size: 1.25rem;
-        color: #333;
-    }
-    .header a {
-        text-decoration: none;
-        color: #1a73e8;
-        font-weight: bold;
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 15px;
-        text-align: left;
-    }
-    th {
-        background-color: #f9f9f9;
-        color: #666;
-        font-weight: normal;
-    }
-    td {
-        border-top: 1px solid #e0e0e0;
-    }
-    td img {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-        margin-right: 10px;
-        vertical-align: middle;
-    }
-    .name-cell {
-        display: flex;
-        align-items: center;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Reviews</title>
+    <link rel="stylesheet" href="Sample.css">
 </head>
 <body>
+    <div class="shop-reviews">
+        <div class="reviews-summary">
+            <h2>Customer Reviews</h2>
+            <div class="overall-rating">
+                <span class="rating-number">4.7</span>
+                <div class="stars">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star-half">&#9734;</span>
+                </div>
+                <span class="total-reviews">(578 Reviews)</span>
+            </div>
+            <div class="rating-breakdown">
+                <div class="rating-bar">
+                    <span>5 stars</span>
+                    <div class="bar">
+                        <div class="filled" style="width: 85%;"></div>
+                    </div>
+                    <span>488</span>
+                </div>
+                <div class="rating-bar">
+                    <span>4 stars</span>
+                    <div class="bar">
+                        <div class="filled" style="width: 13%;"></div>
+                    </div>
+                    <span>74</span>
+                </div>
+                <div class="rating-bar">
+                    <span>3 stars</span>
+                    <div class="bar">
+                        <div class="filled" style="width: 2%;"></div>
+                    </div>
+                    <span>14</span>
+                </div>
+                <div class="rating-bar">
+                    <span>2 stars</span>
+                    <div class="bar">
+                        <div class="filled" style="width: 0%;"></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="rating-bar">
+                    <span>1 star</span>
+                    <div class="bar">
+                        <div class="filled" style="width: 0%;"></div>
+                    </div>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
 
-<div class="container">
-    <div class="header">
-        <h2>Appointment Requests</h2>
-        <a href="#">More</a>
+        <div class="individual-reviews">
+            <div class="review">
+                <div class="review-header">
+                    <span class="review-date">Jan 20, 2024</span>
+                    <div class="stars">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <div class="reviewer-info">
+                        <span class="reviewer-avatar">AK</span>
+                        <div class="reviewer-details">
+                            <span class="reviewer-name">Alex K.</span>
+                            <span class="reviewer-title">Senior Analyst</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Working at Sam.AI has been an incredible journey so far. The technology we're building is truly cutting-edge, and being a part of a team that's revolutionizing how people achieve their goals is immensely fulfilling.
+                    </p>
+                </div>
+            </div>
+            <div class="review">
+                <div class="review-header">
+                    <span class="review-date">Nov 13, 2023</span>
+                    <div class="stars">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star-half">&#9734;</span>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <div class="reviewer-info">
+                        <span class="reviewer-avatar">ER</span>
+                        <div class="reviewer-details">
+                            <span class="reviewer-name">Emily R.</span>
+                            <span class="reviewer-title">Front-End Engineer</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Sam.AI is not just a workplace; it's a community of passionate individuals driven by a common goal of helping others succeed.
+                    </p>
+                </div>
+            </div>
+            <div class="review">
+                <div class="review-header">
+                    <span class="review-date">Nov 7, 2023</span>
+                    <div class="stars">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <div class="reviewer-info">
+                        <span class="reviewer-avatar">MT</span>
+                        <div class="reviewer-details">
+                            <span class="reviewer-name">Michael T.</span>
+                            <span class="reviewer-title">Marketing Director</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Sam.AI truly values its employees and their well-being. From flexible work hours to regular team-building activities, the company goes above and beyond to create a supportive and inclusive environment.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Device Type</th>
-                <th>Date</th>
-                <th>Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="name-cell"><img src="https://via.placeholder.com/40" alt="Hazel Nutt">Hazel Nutt</td>
-                <td>Laptop</td>
-                <td>29/04/24</td>
-                <td>10AM - 11AM</td>
-            </tr>
-            <tr>
-                <td class="name-cell"><img src="https://via.placeholder.com/40" alt="Chris P. Bacon">Chris P. Bacon</td>
-                <td>Speaker</td>
-                <td>02/05/24</td>
-                <td>12NN - 1PM</td>
-            </tr>
-            <tr>
-                <td class="name-cell"><img src="https://via.placeholder.com/40" alt="Marsha Mellow">Marsha Mellow</td>
-                <td>Desktop</td>
-                <td>03/05/24</td>
-                <td>3PM - 4PM</td>
-            </tr>
-            <tr>
-                <td class="name-cell"><img src="https://via.placeholder.com/40" alt="Aida Bugg">Aida Bugg</td>
-                <td>Laptop</td>
-                <td>06/05/24</td>
-                <td>9AM - 10AM</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
 </body>
 </html>
