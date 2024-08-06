@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --highlight: #9147F2;
+    --primary-color: #7B5CAD;
+    --secondary-color: #EEE3FF;
+    --dark-grey: #666666;
+    --light-grey: #f0f0f0;
+    --white: #FFFFFF;
+
+    --text-color: #383838;
+    --lighted-text-color: #999999;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+.dashboard {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 270px;
+    height: 100vh;
+    background-color: var(--white);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position:fixed;
+}
+
+.logo {
+    text-align: center;
+    margin: 20px 0 40px;
+}.logo h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-color);
+}.logo h2 span {
+    color: var(--highlight);
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+nav ul li {
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+nav ul li a {
+    margin: 15px 0;
+    padding: 10px 20px;
+
+    color: var(--lighted-text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 15px;
+}
+
+nav ul li.active{
+    background-color: var(--primary-color);
+}nav ul li.active a{
+    color: var(--white);
+}
+
+.sidebar-footer {
+    text-align: center;
+}
+
+.logout {
+    background-color: var(--white);
+    border: 2px solid #538add;
+    border-radius: 8px;
+    color: #538add;
+
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.dark-mode{  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
+
+    padding: 40px 30px;
+    margin-left: 270px;
+
+    background-color: #f8f8f8;
+    /* background-color: #666666; */
+    color: var(--text-color);
+}
+
+header {
+    width: 100%;
+    margin-bottom: 10px;
+}.repair-navigation {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.tab-content {
+    width: 100%;
+    height: 82%;
+}
+
+/* ---------------------------- */
+
+form {
+    background-color: var(--white);
+    padding: 20px 25px;
+
+}form h3{
+    margin-bottom: 20px;
+
+}form h3 span{
+    color: white;
+    padding: 5px 13px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.form-section{
+    margin-bottom: 30px;
+}.form-section label{
+    color: var(--lighted-text-color);
+}.form-section input{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 7px;
+    border: solid #D9D9D9 2px;
+    width: 100%;
+}
+
+
+.fs-1 .form-details{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+
+}
+.fs-1 .form-details .form-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}.fs-1 .form-details input{
+    margin-top: 10px;
+}
+
+
+.fs-3 .form-group{
+    display: flex;
+    gap: 20px;
+}.fs-3 .form-group .form-details{
+    display: flex;
+    align-items: center;    
+    gap: 10px;
+
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 7px;
+    border: solid #D9D9D9 2px;
+
+    font-weight: 600;
+
+}.fs-3 .form-group .form-details i{
+    color: var(--primary-color);
+    font-size: 18px;
+}
+.fs-3 .form-group button{
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.fs-4 .form-details .form-group{
+    display: flex;
+    flex-direction: column;
+}.fs-4 .form-details .form-group textarea{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 7px;
+    border: solid #D9D9D9 2px;
+    margin-bottom: 10px;
+
+    width: 30%;
+    max-width: 50%;
+    min-width: 30%;
+
+    height: 80px;
+    max-height: 400px;
+    min-height: 80px;
+
+}.fs-4 .form-details button{
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: var(--primary-color);
+    cursor: pointer;
+
+}
+
+.fs-5 table td{
+    padding-bottom: 7px;
+}.fs-5 table td, label{
+    font-weight: 500;
+}
+.fs-5 .status{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 100px;
+}.fs-5 .time{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}.fs-5 .time input{
+    padding: 10px 25px;
+}
+
+.fs-6 .form-group{
+    display: flex;
+    flex-direction: column;
+}.fs-6 .form-group textarea{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 7px;
+    border: solid #D9D9D9 2px;
+    margin-bottom: 10px;
+
+    width: 30%;
+    max-width: 50%;
+    min-width: 30%;
+
+    height: 80px;
+    max-height: 400px;
+    min-height: 180px;
+}
+
+.form-actions{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+}.form-actions button{
+    padding: 10px 25px;
+    border-radius: 7px;
+    border-width: 2px;
+    border-color: var(--primary-color);
+    border-style: solid;
+    color: var(--primary-color);
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}.form-actions .save-btn{
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
+}
