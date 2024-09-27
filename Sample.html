@@ -3,64 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Interface</title>
-    <link rel="stylesheet" href="Sample.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Repair Status Form</title>
 </head>
 <body>
-    <div class="body">
-        <div class="chat-container">
+    <form id="repair-form">
+        <label for="paid_status">Paid Status:</label>
+        <select id="paid_status" class="paid_status">
+            <!-- Options will be populated by JavaScript -->
+        </select>
+        <br><br>
 
-            <aside class="sidebar">
-                <div class="search-bar">
-                    <h2>Messages</h2>
-                    <input type="text" placeholder="Search">
-                </div>
-                
-                <div class="messages">
-                    <!-- Example Contact -->
-                    <div class="contact active">
-                        <img src="profile1.jpg" alt="">
-                        <div class="contact-info">
-                            <div class="name">
-                                <h4>Lara Mueller</h4>
-                                <span class="time">17:33</span>
-                            </div>
-                            <p>Makes to a illustrated on all and...</p>
-                        </div>
-                    </div>
-                    
-                    <!-- More contacts can be added here -->
-                </div>
-            </aside>
+        <label for="repair_status">Repair Status:</label>
+        <select id="repair_status" class="repair_status" onchange="updateConditionalStatus()">
+            <!-- Options will be populated by JavaScript -->
+        </select>
+        <br><br>
 
-            <main class="chat-area">
-                <header class="chat-header">
-                    <img src="profile1.jpg" alt="Lara Mueller">
-                    <h2>Lara Mueller</h2>
-                </header>
-                <div class="messages-container">
-                    <!-- Example Messages -->
-                    <div class="message received">
-                        <p>Both with sisters first very to remodelling logbook due and attempt...</p>
-                        <span class="time">17:57</span>
-                    </div>
-                    <div class="message sent">
-                        <p>Much to omens, accept would was basically.</p>
-                        <span class="time">18:49</span>
-                    </div>
-                    <!-- More messages can be added here -->
-                </div>
-                <footer class="message-input">
-                    <i class="fa-regular fa-face-smile emoji"></i>
-                    <input type="text" placeholder="Write a message">
-                    <button><i class="fa-solid fa-paper-plane"></i></button>
-                </footer>
-            </main>
+        <label for="repair_status_conditional">Repair Status Conditional:</label>
+        <select id="repair_status_conditional" class="repair_status_conditional">
+            <!-- Options will be populated by JavaScript -->
+        </select>
+        <br><br>
+    </form>
 
-        </div>        
-    </div>
+    <script>
+        function populateSelectInputs() {
+            const paidStatusOptions = [
+                "Fully Paid",
+                "Initially Paid",
+                "Unpaid"
+            ];
 
-    <script src="Sample.js"></script>
+            const repairStatusOptions = [
+                "Device Dropped Off",
+                "Diagnosis In Progress",
+                "Repair In Progress",
+                "Waiting For Parts",
+                "Repair Completed",
+                "Ready For Pickup",
+                "Device Collected"
+            ];
+
+            const repairStatusConditionalOptions = {
+                "Diagnosis In Progress": [
+                    "Extended Diagnostic Process",
+                    "Unable to Diagnose"
+                ],
+                "Repair In Progress": [
+                    "Unexpected Complications in Repair",
+                    "Additional Issues Found"
+                ],
+                "Waiting For Parts": [
+                    "Delay in Parts Shipment",
+                    "Part Unavailability"
+                ],
+                "Repair Completed": [
+                    "Device Requires Additional Testing"
+                ],
+                "Ready For Pickup": [
+                    "Last-minute Check Revealed an Issue"
+                ]
+            };
+
+            // Populate the paid_status and repair_status selects
+            populateSelectWithArray("paid_status", paidStatusOptions);
+            populateSelectWithArray("repair_status", repairStatusOptions);
+        }
+
+        function populateSelectWithArray(selectClass, optionsArray) {
+            const selects = document.querySelectorAll(`.${selectClass}`);
+            selects.forEach(select => {
+                select.innerHTML = ''; // Clear existing options
+
+                // Add an empty option at the top
+                const emptyOption = document.createElement("option");
+                emptyOption.value = '';
+                emptyOption.textContent = '';
+                select.appendChild(emptyOption);
+
+                // Add each option from the array
+                optionsArray.forEach(option => {
+                    const newOption = document.createElement("option");
+                    newOption.value = option;
+                    newOption.textContent = option;
+                    select.appendChild(newOption);
+                });
+            });
+        }
+
+        function updateConditionalStatus() {
+            const repairStatusConditionalOptions = {
+                "Diagnosis In Progress": [
+                    "Extended Diagnostic Process",
+                    "Unable to Diagnose"
+                ],
+                "Repair In Progress": [
+                    "Unexpected Complications in Repair",
+                    "Additional Issues Found"
+                ],
+                "Waiting For Parts": [
+                    "Delay in Parts Shipment",
+                    "Part Unavailability"
+                ],
+                "Repair Completed": [
+                    "Device Requires Additional Testing"
+                ],
+                "Ready For Pickup": [
+                    "Last-minute Check Revealed an Issue"
+                ]
+            };
+
+            const repairStatus = document.getElementById('repair_status').value;
+            const conditionalSelect = document.getElementById('repair_status_conditional');
+
+            // Get conditional options for selected repair status, or default to "No available conditional status"
+            const optionsArray = repairStatusConditionalOptions[repairStatus] || ["No available conditional status"];
+
+            // Clear current options in repair_status_conditional
+            conditionalSelect.innerHTML = '';
+
+            // Add an empty option at the top
+            const emptyOption = document.createElement("option");
+            emptyOption.value = '';
+            emptyOption.textContent = '';
+            conditionalSelect.appendChild(emptyOption);
+
+            // Populate the conditional select with options
+            optionsArray.forEach(option => {
+                const newOption = document.createElement("option");
+                newOption.value = option;
+                newOption.textContent = option;
+                conditionalSelect.appendChild(newOption);
+            });
+
+            // Automatically select "No available conditional status" if it's the only option
+            if (optionsArray.length === 1 && optionsArray[0] === "No available conditional status") {
+                conditionalSelect.value = optionsArray[0];
+            }
+        }
+
+        // Initialize the selects when the page loads
+        window.onload = populateSelectInputs;
+    </script>
 </body>
 </html>

@@ -10,6 +10,274 @@
 <body>
     <div class="dashboard">
 
+        <!-- Modal for view datails -->
+        <div class="modal" id="modal">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-body">
+                    <div class="left">
+                        <div class="form-section">
+                            <h2>Customer Details</h2>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="first-name">ID</label>
+                                    <input type="text" id="first-name" name="first-name" value="${data.ID}" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Full Name</label>
+                                    <input type="text" id="last-name" name="last-name" value="${data.fullname}" disabled>
+                                </div>                                
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" value="${data.email}" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Mobile Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" value="${data.contact}" disabled> 
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2>Device Information</h2>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="device-type">Device Type</label>
+                                    <input type="text" id="device-type" name="device-type" value="${data.device_type}" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="brand">Brand</label>
+                                    <input type="text" id="brand" name="brand" value="${data.device_brand}" disabled>
+                                </div>                                
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="device-model">Device Model</label>
+                                    <input type="text" id="device-model" name="device-model" value="${data.device_model}" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="serial-number">Serial Number</label>
+                                    <input type="text" id="serial-number" name="serial-number" value="${data.device_serial}" disabled>
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2>Appointment Schedule</h2>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="appointment-date">Select Date</label>
+                                    <input type="text" id="appointment-date" name="appointment-date" value="${data.formatted_date}" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="appointment-time">Select Time</label>
+                                    <input type="text" id="appointment-time" name="appointment-time" value="${data.formatted_time}" disabled>
+                                </div>                                
+                            </div>
+
+                            <div class="form-group">
+                                <label for="urgency-level">Urgency Level</label>
+                                <input type="text" id="urgency-level" name="urgency-level" value="${data.appointment_urgency}" disabled>
+                            </div>
+                        </div>   
+                    </div>
+
+                    <div class="right">
+                        <div class="form-section excluded">
+                            <h2>Device Issue</h2>
+                            <div class="form-group-excluded">
+                                <label for="issue-description">Description of Issue</label>
+                                <textarea id="issue-description" name="issue-description" disabled>${data.issue_description}</textarea>
+                            </div>
+                            <div class="form-group-excluded">
+                                <label for="error-message">Error Messages</label>
+                                <textarea id="error-message" name="error-message" disabled>${data.error_message}</textarea>
+                            </div>
+                            <div class="form-group-excluded">
+                                <label for="previous-steps">Previous Repair Attempts</label>
+                                <textarea id="previous-steps" name="previous-steps" disabled>${data.repair_attempts}</textarea>
+                            </div>
+                            <div class="form-group-excluded">
+                                <label for="issue-duration">Recent Changes or Events</label>
+                                <textarea id="issue-duration" name="issue-duration" disabled>${data.recent_events}</textarea>
+                            </div>
+                            <div class="form-group-excluded">
+                                <label for="additional-info">Parts Prepared for Repair</label>
+                                <textarea id="additional-info" name="additional-info" disabled>${data.prepared_parts}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-action">
+                    <button class="close">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for verifications -->
+        <div class="modal" id="modal">
+            <form action="/technician/appointment/${appointmentSTATUS}/${appointmentID}" method="POST">
+                <input type="hidden" name="_token" value="${csrfToken}">
+                <input type="hidden" name="_method" value="PATCH">
+                
+                <div class="modal-verification">
+                    <i class="fa-solid fa-circle-check" id="check"></i>
+                    <div class="verification-message">
+                        <h2>Confirm Appointment</h2>
+                        <p>Are you sure you want to confirm this appointment?</p>
+                    </div>
+                    <div class="verification-action">
+                        <button type="submit" class="success">Confirm Appointment</button>
+                        <button type="button" class="normal"><b>Dismiss</b></button>
+                    </div>
+                </div>                
+            </form>
+        </div>
+
+        <div class="modal" id="modal">
+            <form action="/technician/appointment/${appointmentSTATUS}/${appointmentID}" method="POST">
+                <input type="hidden" name="_token" value="${csrfToken}">
+                <input type="hidden" name="_method" value="PATCH">
+
+                <div class="modal-verification">
+                    <i class="fa-solid fa-triangle-exclamation" id="exclamation"></i>
+                    <div class="verification-message">
+                        <h2>Reject Appointment</h2>
+                        <p>Are you sure you want to Reject this appointment?</p>                        
+                    </div>
+                    <div class="verification-action">
+                        <button type="submit" class="danger">Confirm Rejection</button>
+                        <button type="button" class="normal"><b>Dismiss</b></button>
+                    </div>
+                </div>                 
+            </form>
+        </div>
+
+        <div class="modal" id="modal">
+            <form action="/technician/appointment/${appointmentSTATUS}/${appointmentID}" method="POST">
+                <input type="hidden" name="_token" value="${csrfToken}">
+                <input type="hidden" name="_method" value="PATCH">
+
+                <div class="modal-verification">
+                    <i class="fa-solid fa-triangle-exclamation" id="exclamation"></i>
+                    <div class="verification-message">
+                        <h2>Cancel Appointment</h2>
+                        <p>Are you sure you want to Cancel this appointment?</p>                        
+                    </div>
+                    <div class="verification-action">
+                        <button type="submit" class="danger">Confirm Cancellation</button>
+                        <button type="button" class="normal"><b>Dismiss</b></button>
+                    </div>
+                </div>                 
+            </form>
+        </div>
+
+        <!-- Modal for Repair Appointment -->
+        <div class="modal" id="modal">
+            <form action="/technician/repairstatus/create/${appointmentID}/${customerID}" method="POST">
+                <input type="hidden" name="_token" value="${csrfToken}">
+                <div class="modal-verification">
+                    <i class="fa-solid fa-screwdriver-wrench" id="repair"></i>
+                    <div class="verification-message">
+                        <h2>Start Repair</h2>
+                        <p>Are you sure you want to start the repair for this appointment?</p>                        
+                    </div>
+                    <div class="verification-content">
+                        <h3>Additional Details</h3>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="paid_status">Paid Status</label>
+                                <select id="paid_status" name="paid_status">
+                                    <option value="Unpaid">Unpaid</option>
+                                    <option value="Initially Paid">Initially Paid</option>
+                                    <option value="Fully Paid">Fully Paid</option>
+                                </select>
+                            </div>                            
+                        </div>
+                        <!-- Only accept number -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="revenue">Revenue (Optional)</label>
+                                <input type="text" id="revenue" name="revenue">
+                            </div>
+                            <div class="form-group">
+                                <label for="expenses">Expenses (Optional)</label>
+                                <input type="text" id="expenses" name="expenses"> 
+                            </div>                                
+                        </div>                      
+                    </div>
+
+                    <div class="verification-action">
+                        <button type="submit" class="submit">Confirm Start</button>
+                        <button type="button" class="normal"><b>Dismiss</b></button>
+                    </div>
+                </div>                 
+            </form>
+        </div>
+
+        <!-- Modal for Updating Repair Status -->
+        <div class="modal active" id="modal">
+            <form>
+                <div class="modal-verification">
+                    <div class="update-content">
+                        <div class="header">
+                            <h2>Payment Information </h2>
+                            <i class="fa-solid fa-circle-exclamation" title="Payment Information is visible to you only" id="info"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="paid_status">Paid Status</label>
+                            <select id="paid_status" name="paid_status" class="paid_status">
+                                <option value="${data.paid_status}">${data.paid_status}</option>
+                            </select>
+                        </div> 
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="revenue">Revenue</label>
+                                <input type="text" id="revenue" name="revenue" value="${data.revenue}">
+                            </div>
+                            <div class="form-group">
+                                <label for="expenses">Expenses</label>
+                                <input type="text" id="expenses" name="expenses" value="${data.expenses}"> 
+                            </div>                            
+                        </div>
+                        
+                        <h2>Repair Information</h2>
+                        <div class="repair-information">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="repair_status">Repair Status</label>
+                                    <select id="repair_status" name="repair_status" class="repair_status">
+                                        <option value="${data.repairstatus}">${data.repairstatus}</option>
+                                    </select>
+                                </div> 
+                                <div class="form-group">
+                                    <label for="repair_status_conditional">Repair Status (Conditional)</label>
+                                    <select id="repair_status_conditional" name="repair_status_conditional" class="repair_status_conditional">
+                                        <option value="${data.repairstatus_conditional}">${data.repairstatus_conditional}</option>
+                                    </select>
+                                </div>                                    
+                            </div>
+                                      
+                            <div class="form-group">
+                                <label for="repairstatus_message">Repair Status Message</label>
+                                <textarea type="text" id="repairstatus_message" name="repairstatus_message">${data.repairstatus_message ?? ''}</textarea>
+                            </div>                          
+                        </div>
+                    </div>
+    
+                    <div class="update-action">
+                        <button type="submit" class="submit">Confirm Repair Update</button>
+                        <button type="button" class="normal"><b>Dismiss</b></button>
+                    </div>
+                    <p class="reminder">Reminder: Updating the repair information will notify the customer of the progress. Make sure the information is accurate before proceeding.</p>
+                </div>                 
+            </form>
+        </div>
+
+
         <aside class="sidebar">
 
             <nav>
@@ -19,12 +287,6 @@
 
                 <ul>
                     <li class="active"><a href="/Technician/2 - Dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    <li><a href="/Technician/3 - Appointment.html"><i class="fas fa-calendar-alt"></i> Appointment</a></li>
-                    <li><a href="/Technician/4 - RepairStatus.html"><i class="fas fa-tools"></i> Repair Status</a></li>
-                    <li><a href="#"><i class="fas fa-user"></i> Customer</a></li>
-                    <li><a href="/Technician/5 - ShopReviews.html"><i class="fas fa-star"></i> Shop Reviews</a></li>
-                    <li><a href="#"><i class="fas fa-user-cog"></i> Manage Profile</a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
                 </ul>
             </nav>
 
@@ -41,229 +303,6 @@
             </div>
 
         </aside>
-
-        <main class="main-content">
-            <header>
-                <h1>Dashboard</h1>
-            </header>
-
-            <section class="stats">
-                <div class="stat revenue-card">
-                    <div class="info">
-                        <p>Revenue</p>
-                        <h2>P35.2K</h2>
-                    </div>
-                    <div class="progress revenue">
-                        <h4 class="percentage">+22%</h4>
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-                    </div>
-                </div>
-                <div class="stat repairs-card">
-                    <div class="info">
-                        <p>Repairs</p>
-                        <h2>58</h2>
-                    </div>
-                    <div class="progress repairs">
-                        <h4 class="percentage">-25%</h4>
-                        <i class="fa-solid fa-arrow-trend-down"></i>
-                    </div>
-                </div>
-                <div class="stat visitors-card">
-                    <div class="info">
-                        <p>Visitors</p>
-                        <h2>1.5K</h2>
-                    </div>
-                    <div class="progress visitors">
-                        <h4 class="percentage">+49%</h4>
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-                    </div>
-                </div>
-                <div class="stat reviews-card">
-                    <div class="info">
-                        <p>Reviews</p>
-                        <h2>55</h2>
-                    </div>
-                    <div class="progress reviews">
-                        <h4 class="percentage">+1.9%</h4>
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="appointments">
-                <div class="appointments-requests card">
-                    <div class="actions">
-                        <h2>Appointment Requests</h2>
-                        <a href="">More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                    
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Device Type</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>More</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="profile-cell"> Hazel Nutt</td>
-                                <td>Laptop</td>
-                                <td>29/04/24</td>
-                                <td>10AM</td>
-                                <td><button>View</button></td>
-                            </tr>
-                            <tr>
-                                <td class="profile-cell"> Chris P. Bacon</td>
-                                <td>Speaker</td>
-                                <td>02/05/24</td>
-                                <td>12PM</td>
-                                <td><button>View</button></td>
-                            </tr>
-                            <tr>
-                                <td class="profile-cell"> Marsha Mellow</td>
-                                <td>Desktop</td>
-                                <td>03/05/24</td>
-                                <td>3PM</td>
-                                <td><button>View</button></td>
-                            </tr>
-                            <tr>
-                                <td class="profile-cell"> Aida Bugg</td>
-                                <td>Laptop</td>
-                                <td>06/05/24</td>
-                                <td>9AM</td>
-                                <td><button>View</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="appointment-summary card">
-                    <div class="actions">
-                        <h2>Activity Summary</h2>
-                        <a href="">More <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                    <div class="summary-cards">
-                        <div class="summary-card">
-                            <div class="info">
-                                <p>Upcoming</p>
-                                <h2>7</h2>                                
-                            </div>
-                            <i class="fa-solid fa-calendar-day upcoming"></i>
-                        </div>
-                        <div class="summary-card">
-                            <div class="info">
-                                <p>Requests</p>
-                                <h2>25</h2>                                
-                            </div>
-                            <i class="fa-solid fa-calendar-plus request"></i>
-                        </div>
-                        <div class="summary-card">
-                            <div class="info">
-                                <p>Pending Repairs</p>
-                                <h2>5</h2>                                
-                            </div>
-                            <i class="fa-solid fa-screwdriver-wrench pending"></i>
-                        </div>
-                        <div class="summary-card">
-                            <div class="info">
-                                <p>Completed Repairs</p>
-                                <h2>4</h2>                                
-                            </div>
-                            <i class="fa-solid fa-check-double completed"></i>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="upcoming-appointments card">
-                <div class="actions">
-                    <h2>Upcoming Appointments</h2>
-                    <a href="">More <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Contact</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Details</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Chris P. Bacon</td>
-                            <td>chrispbacon@gmail.com</td>
-                            <td>04567890231</td>
-                            <td>April 30, 2024</td>
-                            <td>8AM - 9AM</td>
-                            <td><button>View</button></td>
-                            <td>
-                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
-                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
-                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Chris P. Bacon</td>
-                            <td>chrispbacon@gmail.com</td>
-                            <td>04567890231</td>
-                            <td>May 30, 2024</td>
-                            <td>8AM - 9AM</td>
-                            <td><button>View</button></td>
-                            <td>
-                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
-                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
-                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Chris P. Bacon</td>
-                            <td>chrispbacon@gmail.com</td>
-                            <td>04567890231</td>
-                            <td>May 30, 2024</td>
-                            <td>8AM - 9AM</td>
-                            <td><button>View</button></td>
-                            <td>
-                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
-                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
-                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Chris P. Bacon</td>
-                            <td>chrispbacon@gmail.com</td>
-                            <td>04567890231</td>
-                            <td>May 30, 2024</td>
-                            <td>8AM - 9AM</td>
-                            <td><button>View</button></td>
-                            <td>
-                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
-                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
-                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Chris P. Bacon</td>
-                            <td>chrispbacon@gmail.com</td>
-                            <td>04567890231</td>
-                            <td>May 30, 2024</td>
-                            <td>8AM - 9AM</td>
-                            <td><button>View</button></td>
-                            <td>
-                                <a class="edit" href=""><i class="fas fa-edit"></i></a>
-                                <a class="delete" href=""><i class="fas fa-trash"></i></a>
-                                <a class="more" href=""><i class="fa-solid fa-ellipsis"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
     </div>
 </body>
 </html>
